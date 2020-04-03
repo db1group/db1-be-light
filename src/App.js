@@ -9,19 +9,23 @@ import {
   CardContent,
   Avatar,
   IconButton,
+  Typography,
 } from '@material-ui/core';
 
 import Routes from './routes';
 
 const styles = () => ({
   root: {
-    padding: '50px 100px',
+    padding: '130px 50px',
     zIndex: 999,
     position: 'absolute',
   },
+  title: {
+    color: '#fff',
+  },
   card: {
     display: 'flex',
-    height: 'calc(100vh - 100px)',
+    minHeight: 'calc(100vh - 100px)',
   },
   cardHeader: {
     background: '#f1f1f1',
@@ -37,7 +41,8 @@ const styles = () => ({
     height: 200,
     width: '100%',
     top: 0,
-    background: 'url(./header-be-light.png) no-repeat',
+    // background: 'url(./header-be-light.png) no-repeat',
+    background: '#00335E',
     backgroundSize: '100% 100%',
   },
   rightContainer: {
@@ -62,6 +67,9 @@ const App = ({ classes }) => (
   <div>
     <div className={classes.background} />
     <Grid container className={classes.root}>
+      <Typography className={classes.title} variant="h4" component="h3">
+        #DB1 Be Light
+      </Typography>
       <Grid item xs={12}>
         <Card className={classes.card}>
           <Grid container>
@@ -89,32 +97,10 @@ const Container = ({ classes }) => (
       title="Papéis e Reponsabilidades"
       className={classes.cardHeader}
     />
-    <CardContent className={[classes.rightContainer, classes.content]}>
-      <Routes/>
+    <CardContent>
+      <Routes />
     </CardContent>
   </Grid>
 );
-
-
-// function App({ classes }) {
-//   return (
-//   <Grid className={classes.heightAdjust} item xs={12}>
-//     <CardHeader
-//       avatar={
-//         <Avatar aria-label="Recipe" className={classes.avatar}>
-//           <ImageIcon />
-//         </Avatar>
-//       }
-//       action={
-//         <IconButton>
-//           <MoreVertIcon />
-//         </IconButton>
-//       }
-//       title="Papéis e Reponsabilidades"
-//       className={classes.cardHeader}
-//     />
-//     <Routes/>
-//   </Grid>);
-// }
 
 export default withStyles(styles)(App);

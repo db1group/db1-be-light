@@ -3,7 +3,8 @@ import { withStyles } from '@material-ui/core/styles';
 import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
 import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import Typography from '@material-ui/core/Typography';
+import { Grid, Typography, Divider } from '@material-ui/core';
+import roles from './roles.json';
 
 const ExpansionPanel = withStyles({
   root: {
@@ -18,6 +19,7 @@ const ExpansionPanel = withStyles({
     '&$expanded': {
       margin: 'auto',
     },
+    marginBottom: '20px',
   },
   expanded: {},
 })(MuiExpansionPanel);
@@ -43,48 +45,69 @@ const ExpansionPanelSummary = withStyles({
 const ExpansionPanelDetails = withStyles((theme) => ({
   root: {
     padding: theme.spacing(2),
+    flexDirection: 'column',
   },
 }))(MuiExpansionPanelDetails);
 
 export default function CustomizedExpansionPanels() {
-  const [expanded, setExpanded] = React.useState('panel1');
+  const [expanded, setExpanded] = React.useState('');
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
 
   return (
-    <div>
-      <ExpansionPanel square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-        <ExpansionPanelSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography>Collapsible Group Item #1</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Typography>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-      <ExpansionPanel square expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-        <ExpansionPanelSummary aria-controls="panel2d-content" id="panel2d-header">
-          <Typography>Collapsible Group Item #2</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit..
-          </Typography>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-      <ExpansionPanel square expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-        <ExpansionPanelSummary aria-controls="panel3d-content" id="panel3d-header">
-          <Typography>Collapsible Group Item #3</Typography>
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Typography>
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-    </div>
+    <>
+      {roles.map((role) => (
+        <ExpansionPanel
+          key={role.id}
+          square
+          expanded={expanded === `panel_${role.id}`}
+          onChange={handleChange(`panel_${role.id}`)}
+        >
+          <ExpansionPanelSummary
+            aria-controls="panel2d-content"
+            id="panel2d-header"
+          >
+            <Typography>{role.role}</Typography>
+          </ExpansionPanelSummary>
+          <ExpansionPanelDetails>
+            <Typography variant="h6" component="h2">
+              Responsabilidades:
+            </Typography>
+
+            <Divider />
+
+            {role.responsibilities.map((resp) => (
+              <Grid>
+                <Typography variant="h6" component="h3">
+                  {resp.groupName}
+                </Typography>
+
+                <ul>
+                  {resp.descriptions.map((desc, index) => (
+                    // eslint-disable-next-line react/no-array-index-key
+                    <li key={index}>{desc}</li>
+                  ))}
+                </ul>
+              </Grid>
+            ))}
+
+            <Typography variant="h6" component="h2">
+              Não Responsabilidades:
+            </Typography>
+
+            <Divider />
+
+            <ul>
+              {role.notResponsibilities.map((desc, index) => (
+                // eslint-disable-next-line react/no-array-index-key
+                <li key={index}>{desc}</li>
+              ))}
+            </ul>
+          </ExpansionPanelDetails>
+        </ExpansionPanel>
+      ))}
+    </>
   );
 }

@@ -30,7 +30,9 @@ module.exports = {
       'warn',
       { extensions: ['.jsx', '.js'] }
     ],
-    "react/prop-types": 0,
-    'import/prefer-default-export': 'off'
+    'import/prefer-default-export': 'off',
+    'react/state-in-constructor': 'off',
+    'react/static-property-placement': 'off',
+    'react/prop-types': 'off'
   },
 };
