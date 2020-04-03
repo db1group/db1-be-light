@@ -11,6 +11,8 @@ import {
   IconButton,
 } from '@material-ui/core';
 
+import Routes from './routes';
+
 const styles = () => ({
   root: {
     padding: '50px 100px',
@@ -87,8 +89,32 @@ const Container = ({ classes }) => (
       title="Papéis e Reponsabilidades"
       className={classes.cardHeader}
     />
-    <CardContent className={[classes.rightContainer, classes.content]} />
+    <CardContent className={[classes.rightContainer, classes.content]}>
+      <Routes/>
+    </CardContent>
   </Grid>
 );
+
+
+// function App({ classes }) {
+//   return (
+//   <Grid className={classes.heightAdjust} item xs={12}>
+//     <CardHeader
+//       avatar={
+//         <Avatar aria-label="Recipe" className={classes.avatar}>
+//           <ImageIcon />
+//         </Avatar>
+//       }
+//       action={
+//         <IconButton>
+//           <MoreVertIcon />
+//         </IconButton>
+//       }
+//       title="Papéis e Reponsabilidades"
+//       className={classes.cardHeader}
+//     />
+//     <Routes/>
+//   </Grid>);
+// }
 
 export default withStyles(styles)(App);
