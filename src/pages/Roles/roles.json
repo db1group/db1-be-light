@@ -1,0 +1,120 @@
+[
+  {
+    "id": 1,
+    "role": "AM (Agile Master)",
+    "responsibilities": [
+      {
+        "groupName": "PROCESSO",
+        "descriptions": [
+          "Facilitar as reuniões e cerimônias (como SP1, SP2, Daily, estimativas, retrospectivas e etc);",
+          "Remover impedimentos;",
+          "Levantar e acompanhar indicadores de produtividade, prazo e demográficos (NF, erros e outros);",
+          "Garantir a organização e estruturação do ciclo de desenvolvimento da ferramenta de gestão;",
+          "Acompanhar as métricas e tomar ações para o time se manter dentro das metas",
+          "Ajudar na tomada de decisões",
+          "Apoiar com dúvidas sobre processos;",
+          "Garantir o SLA;",
+          "Garantir que as entregas sejam realizadas no prazo e com qualidade;",
+          "Identificar se o time está com algum problema interno (pessoal ou profissional);",
+          "Aumentar a performance do time nas entregas;",
+          "Transmitir ao time sobre a cultura de agilidade;",
+          "Ensinar ao time a se auto organizar e ter mais autonomia;",
+          "Garantir a evolução contínua do time.",
+          "Feedbacks de time;"
+        ]
+      },
+      {
+        "groupName": "CLIENTE/STAKEHOLDERS",
+        "descriptions": [
+          "Facilitar a comunicação;",
+          "Auxílio ao PO no alinhamento de prazos",
+          "Realizar comunicados sobre novidades da empresa e da unidade;"
+        ]
+      },
+      {
+        "groupName": "PESSOAS",
+        "descriptions": [
+          "Dar feedback honesto sobre os processos de gestão de pessoas e feedbacks informais",
+          "Ajudar na evolução de competências técnicas e comportamentais do time",
+          "Formar novos Agile Masters"
+        ]
+      }
+    ],
+    "notResponsibilities": [
+      "Remover impedimentos;",
+      "Remover impedimentos;",
+      "Remover impedimentos;",
+      "Remover impedimentos;",
+      "Remover impedimentos;",
+      "Remover impedimentos;"
+    ]
+  },
+  {
+    "id": 2,
+    "role": "Analista de Negócios",
+    "responsibilities": [
+      {
+        "groupName": "PROCESSO",
+        "descriptions": [
+          "Dinâmicas de elicitação;",
+          "Análise de concorrentes;",
+          "Análise de novas tecnologias;",
+          "Validação de funcionamento da operação junto ao cliente;",
+          "Escrever requisitos e User Storys;"
+        ]
+      },
+      {
+        "groupName": "Group2",
+        "descriptions": [
+          "Facilitar as reuniões e cerimônias (como SP1, SP2, Dai",
+          "Facilitar as reuniões e cerimônias (como SP1, SP2, Dai",
+          "Facilitar as reuniões e cerimônias (como SP1, SP2, Dai",
+          "Facilitar as reuniões e cerimônias (como SP1, SP2, Dai",
+          "Facilitar as reuniões e cerimônias (como SP1, SP2, Dai"
+        ]
+      }
+    ],
+    "notResponsibilities": [
+      "Remover impedimentos;",
+      "Remover impedimentos;",
+      "Remover impedimentos;",
+      "Remover impedimentos;",
+      "Remover impedimentos;",
+      "Remover impedimentos;"
+    ]
+  },
+  {
+    "id": 3,
+    "role": "Arquiteto",
+    "responsibilities": [
+      {
+        "groupName": "PROCESSO",
+        "descriptions": [
+          "Dinâmicas de elicitação;",
+          "Análise de concorrentes;",
+          "Análise de novas tecnologias;",
+          "Validação de funcionamento da operação junto ao cliente;",
+          "Escrever requisitos e User Storys;"
+        ]
+      },
+      {
+        "groupName": "Group2",
+        "descriptions": [
+          "Facilitar as reuniões e cerimônias (como SP1, SP2, Dai",
+          "Facilitar as reuniões e cerimônias (como SP1, SP2, Dai",
+          "Facilitar as reuniões e cerimônias (como SP1, SP2, Dai",
+          "Facilitar as reuniões e cerimônias (como SP1, SP2, Dai",
+          "Facilitar as reuniões e cerimônias (como SP1, SP2, Dai"
+        ]
+      }
+    ],
+    "notResponsibilities": [
+      "Remover impedimentos;",
+      "Remover impedimentos;",
+      "Remover impedimentos;",
+      "Remover impedimentos;",
+      "Remover impedimentos;",
+      "Remover impedimentos;"
+    ]
+  }
+]
