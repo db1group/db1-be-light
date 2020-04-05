@@ -13,6 +13,7 @@ import {
 } from '@material-ui/core';
 
 import Routes from './routes';
+import Header from './components/Header';
 
 const styles = () => ({
   root: {
@@ -22,6 +23,7 @@ const styles = () => ({
   },
   title: {
     color: '#fff',
+    padding: '50px',
   },
   card: {
     display: 'flex',
@@ -35,15 +37,6 @@ const styles = () => ({
   },
   content: {
     marginTop: 0,
-  },
-  background: {
-    position: 'absolute',
-    height: 200,
-    width: '100%',
-    top: 0,
-    // background: 'url(./header-be-light.png) no-repeat',
-    background: '#00335E',
-    backgroundSize: '100% 100%',
   },
   rightContainer: {
     // background:
@@ -65,11 +58,12 @@ const styles = () => ({
 
 const App = ({ classes }) => (
   <div>
-    <div className={classes.background} />
-    <Grid container className={classes.root}>
+    <Header>
       <Typography className={classes.title} variant="h4" component="h3">
         #DB1 Be Light
       </Typography>
+    </Header>
+    <Grid container className={classes.root}>
       <Grid item xs={12}>
         <Card className={classes.card}>
           <Grid container>

@@ -71,6 +71,7 @@ export default function CustomizedExpansionPanels() {
           >
             <Typography>{role.role}</Typography>
           </ExpansionPanelSummary>
+
           <ExpansionPanelDetails>
             <Typography variant="h6" component="h2">
               Responsabilidades:
