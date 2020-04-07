@@ -4,7 +4,16 @@ import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
 import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import { Grid, Typography, Divider } from '@material-ui/core';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+
 import roles from './roles.json';
+import BoxResponsibility from '../../components/BoxResponsibility';
 
 const ExpansionPanel = withStyles({
   root: {
@@ -49,7 +58,7 @@ const ExpansionPanelDetails = withStyles((theme) => ({
   },
 }))(MuiExpansionPanelDetails);
 
-export default function CustomizedExpansionPanels() {
+export default function Roles() {
   const [expanded, setExpanded] = React.useState('');
 
   const handleChange = (panel) => (event, newExpanded) => {
@@ -74,41 +83,78 @@ export default function CustomizedExpansionPanels() {
 
           <ExpansionPanelDetails>
             <Typography variant="h6" component="h2">
-              Responsabilidades:
+              RESPONSABILIDADES:
             </Typography>
-
-            <Divider />
-
+            <br />
             {role.responsibilities.map((resp) => (
               <Grid>
-                <Typography variant="h6" component="h3">
+                {/* <Typography variant="h6" component="h3">
                   {resp.groupName}
-                </Typography>
+                </Typography> */}
 
-                <ul>
-                  {resp.descriptions.map((desc, index) => (
-                    // eslint-disable-next-line react/no-array-index-key
-                    <li key={index}>{desc}</li>
-                  ))}
-                </ul>
+                {/* {resp.descriptions.map((desc, index) => (
+                  // eslint-disable-next-line react/no-array-index-key
+                  <BoxResponsibility key={index}>{desc}</BoxResponsibility>
+                ))} */}
+
+                <SimpleTable title={resp.groupName} rows={resp.descriptions} />
+                <br />
               </Grid>
             ))}
-
+            <br />
+            <Divider />
+            <br />
             <Typography variant="h6" component="h2">
-              Não Responsabilidades:
+              NÃO RESPONSABILIDADES:
             </Typography>
 
-            <Divider />
+            {/* {role.notResponsibilities.map((desc, index) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <BoxResponsibility key={index}>{desc}</BoxResponsibility>
+            ))} */}
 
-            <ul>
-              {role.notResponsibilities.map((desc, index) => (
-                // eslint-disable-next-line react/no-array-index-key
-                <li key={index}>{desc}</li>
-              ))}
-            </ul>
+            <SimpleTable rows={role.notResponsibilities} />
           </ExpansionPanelDetails>
         </ExpansionPanel>
       ))}
     </>
+  );
+}
+
+const StyledTableCell = withStyles((theme) => ({
+  head: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  body: {
+    fontSize: 14,
+  },
+}))(TableCell);
+
+function SimpleTable({ title, rows }) {
+  return (
+    <TableContainer component={Paper}>
+      <Table aria-label="simple table">
+        {title ? (
+          <TableHead>
+            <TableRow>
+              <StyledTableCell>{title}</StyledTableCell>
+            </TableRow>
+          </TableHead>
+        ) : (
+          <></>
+        )}
+
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow key={row}>
+              <TableCell component="th" scope="row">
+                {row}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 }

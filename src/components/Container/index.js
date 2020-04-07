@@ -8,9 +8,14 @@ import {
   CardContent,
   Avatar,
   IconButton,
+  Paper,
+  Tabs,
+  Tab,
 } from '@material-ui/core';
+import { Redirect } from 'react-router';
 
 import Routes from '../../routes';
+import { render } from 'react-dom';
 
 const styles = () => ({
   cardHeader: {
@@ -22,26 +27,37 @@ const styles = () => ({
   },
 });
 
-const Container = ({ classes }) => (
-  <Grid className={classes.heightAdjust} item xs={12}>
-    <CardHeader
-      avatar={
-        <Avatar aria-label="Recipe">
-          <ImageIcon />
-        </Avatar>
-      }
-      action={
-        <IconButton>
-          <MoreVertIcon />
-        </IconButton>
-      }
-      title="Papéis e Reponsabilidades"
-      className={classes.cardHeader}
-    />
-    <CardContent>
-      <Routes />
-    </CardContent>
-  </Grid>
-);
+const Container = ({ classes }) => {
+  const [value, setValue] = React.useState(0);
+  const [route, setRoute] = React.useState('/');
+  const routes = ['/roles'];
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+    setRoute(routes[newValue]);
+    console.log(route);
+
+    window.location.assign(route);
+  };
+
+  return (
+    <Grid className={classes.heightAdjust} item xs={12}>
+      <Paper square>
+        <Tabs
+          value={value}
+          indicatorColor="primary"
+          textColor="primary"
+          onChange={handleChange}
+        >
+          <Tab label="Papéis e Responsabilidades" />
+        </Tabs>
+      </Paper>
+
+      <CardContent>
+        <Routes />
+      </CardContent>
+    </Grid>
+  );
+};
 
 export default withStyles(styles)(Container);
