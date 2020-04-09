@@ -1,21 +1,8 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import ImageIcon from '@material-ui/icons/Image';
-import {
-  Grid,
-  CardHeader,
-  CardContent,
-  Avatar,
-  IconButton,
-  Paper,
-  Tabs,
-  Tab,
-} from '@material-ui/core';
-import { Redirect } from 'react-router';
+import { Grid, CardContent, Paper, Tabs, Tab } from '@material-ui/core';
 
 import Routes from '../../routes';
-import { render } from 'react-dom';
 
 const styles = () => ({
   cardHeader: {
@@ -24,6 +11,9 @@ const styles = () => ({
   heightAdjust: {
     display: 'flex',
     flexDirection: 'column',
+  },
+  heightTabs: {
+    height: '70px',
   },
 });
 
@@ -49,7 +39,10 @@ const Container = ({ classes }) => {
           textColor="primary"
           onChange={handleChange}
         >
-          <Tab label="Papéis e Responsabilidades" />
+          <Tab
+            className={classes.heightTabs}
+            label="Papéis e Responsabilidades"
+          />
         </Tabs>
       </Paper>
 

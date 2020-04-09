@@ -4,49 +4,46 @@
     "role": "AM (Agile Master)",
     "responsibilities": [
       {
-        "groupName": "PROCESSO",
+        "groupName": "Processo",
         "descriptions": [
-          "Facilitar as reuniões e cerimônias (como SP1, SP2, Daily, estimativas, retrospectivas e etc);",
-          "Remover impedimentos;",
-          "Levantar e acompanhar indicadores de produtividade, prazo e demográficos (NF, erros e outros);",
-          "Garantir a organização e estruturação do ciclo de desenvolvimento da ferramenta de gestão;",
-          "Acompanhar as métricas e tomar ações para o time se manter dentro das metas",
-          "Ajudar na tomada de decisões",
-          "Apoiar com dúvidas sobre processos;",
-          "Garantir o SLA;",
-          "Garantir que as entregas sejam realizadas no prazo e com qualidade;",
-          "Identificar se o time está com algum problema interno (pessoal ou profissional);",
-          "Aumentar a performance do time nas entregas;",
-          "Transmitir ao time sobre a cultura de agilidade;",
-          "Ensinar ao time a se auto organizar e ter mais autonomia;",
+          "Facilitar as reuniões e cerimônias (como SP1, SP2, Daily, estimativas, retrospectivas e etc).",
+          "Remover impedimentos.",
+          "Levantar e acompanhar indicadores de produtividade, prazo e demográficos (NF, erros e outros).",
+          "Garantir a organização e estruturação do ciclo de desenvolvimento da ferramenta de gestão.",
+          "Acompanhar as métricas e tomar ações para o time se manter dentro das metas.",
+          "Ajudar na tomada de decisões.",
+          "Apoiar com dúvidas sobre processos.",
+          "Garantir o SLA",
+          "Garantir que as entregas sejam realizadas no prazo e com qualidade.",
+          "Identificar se o time está com algum problema interno (pessoal ou profissional).",
+          "Aumentar a performance do time nas entregas.",
+          "Transmitir ao time sobre a cultura de agilidade.",
+          "Ensinar ao time a se auto organizar e ter mais autonomia.",
           "Garantir a evolução contínua do time.",
-          "Feedbacks de time;"
+          "Feedbacks de time."
         ]
       },
       {
-        "groupName": "CLIENTE/STAKEHOLDERS",
+        "groupName": "Cliente/Stakeholders",
         "descriptions": [
-          "Facilitar a comunicação;",
-          "Auxílio ao PO no alinhamento de prazos",
-          "Realizar comunicados sobre novidades da empresa e da unidade;"
+          "Facilitar a comunicação.",
+          "Auxílio ao PO no alinhamento de prazos.",
+          "Realizar comunicados sobre novidades da empresa e da unidade.",
+          "Apoio com as outras áreas (implantação, comercial e suporte) para situações de problemas e ações específicas (Locus de Controle)."
         ]
       },
       {
-        "groupName": "PESSOAS",
+        "groupName": "Pessoas",
         "descriptions": [
-          "Dar feedback honesto sobre os processos de gestão de pessoas e feedbacks informais",
-          "Ajudar na evolução de competências técnicas e comportamentais do time",
-          "Formar novos Agile Masters"
+          "Dar feedback honesto sobre os processos de gestão de pessoas e feedbacks informais.",
+          "Ajudar na evolução de competências técnicas e comportamentais do time.",
+          "Formar novos Agile Masters."
         ]
       }
     ],
     "notResponsibilities": [
-      "Remover impedimentos;",
-      "Remover impedimentos;",
-      "Remover impedimentos;",
-      "Remover impedimentos;",
-      "Remover impedimentos;",
-      "Remover impedimentos;"
+      "Às vezes atuo como PO no time.",
+      "Alguns acompanhamentos de marketplaces e estabilidade do sistema"
     ]
   },
   {
@@ -54,33 +51,52 @@
     "role": "Analista de Negócios",
     "responsibilities": [
       {
-        "groupName": "PROCESSO",
+        "groupName": "Processo",
         "descriptions": [
-          "Dinâmicas de elicitação;",
-          "Análise de concorrentes;",
-          "Análise de novas tecnologias;",
-          "Validação de funcionamento da operação junto ao cliente;",
-          "Escrever requisitos e User Storys;"
+          "Dinâmicas de elicitação.",
+          "Análise de concorrentes.",
+          "Análise de novas tecnologias.",
+          "Validação de funcionamento da operação junto ao cliente.",
+          "Escrever requisitos e User Storys.",
+          "Elaborar protótipos.",
+          "Validação de análises com stakeholders e PO.",
+          "Participação nas cerimônias.",
+          "Auxiliar o P.O. na criação de épicos e features.",
+          "Elaboração e otimização de padrões de documentos.",
+          "Auxiliar o time tirando dúvidas da regra de negócio.",
+          "Realizar feedbacks para o time.",
+          "Sinalizar impedimentos."
         ]
       },
       {
-        "groupName": "Group2",
+        "groupName": "Cliente/Stakeholders",
         "descriptions": [
-          "Facilitar as reuniões e cerimônias (como SP1, SP2, Dai",
-          "Facilitar as reuniões e cerimônias (como SP1, SP2, Dai",
-          "Facilitar as reuniões e cerimônias (como SP1, SP2, Dai",
-          "Facilitar as reuniões e cerimônias (como SP1, SP2, Dai",
-          "Facilitar as reuniões e cerimônias (como SP1, SP2, Dai"
+          "Realizar reuniões de acompanhamento com o time de desenvolvimento.",
+          "Envolver o time de desenvolvimento e teste durante o processo de análise para validação e evolução da solução.",
+          "Comunicação com cliente interno e externo para compreensão de objetivos e necessidades.",
+          "Entendimento das visões dos stakeholders.",
+          "Levantamento de comportamentos e Inception.",
+          "Validação de artefatos criados por outros analistas ou PO.",
+          "Participação em reuniões para definições de interfaces para o sistema.",
+          "Elaboração de protótipos e mockups para criar uma padronização de componentes."
+        ]
+      },
+      {
+        "groupName": "Pessoas",
+        "descriptions": [
+          "Dar feedback honesto sobre os processos de gestão de pessoas e feedbacks informais.",
+          "Ajudar na evolução de competências técnicas e comportamentais dos analistas."
         ]
       }
     ],
     "notResponsibilities": [
-      "Remover impedimentos;",
-      "Remover impedimentos;",
-      "Remover impedimentos;",
-      "Remover impedimentos;",
-      "Remover impedimentos;",
-      "Remover impedimentos;"
+      "Apoio a equipe técnica e demais times para construção, alteração ou validação de funcionalidades.",
+      "Estrutura de telas, colores, harmonia e fluxos.",
+      "Remover impedimentos.",
+      "Facilitar cerimônias quando os AMs não podem.",
+      "Ir atrás dos insumos mínimos para iniciar a análise.",
+      "Realizar testes para homologação.",
+      "Construção do backlog e priorização."
     ]
   },
   {
@@ -88,33 +104,253 @@
     "role": "Arquiteto",
     "responsibilities": [
       {
-        "groupName": "PROCESSO",
+        "groupName": "Processo",
         "descriptions": [
-          "Dinâmicas de elicitação;",
-          "Análise de concorrentes;",
-          "Análise de novas tecnologias;",
-          "Validação de funcionamento da operação junto ao cliente;",
-          "Escrever requisitos e User Storys;"
+          "Quando acionado, definir junto com os times soluções técnicas.",
+          "Trabalhar em sincronia com o P.O. e acompanhar backlog de negócio x técnico",
+          "Definir padrões arquiteturas e ter a arquitetura visível e organizada.",
+          "Definir padrões de implementação e ter os padrões visível e organizado.",
+          "Participar da SP2 de tarefas mais complexas. (cuidado com o que é do Arquiteto e o que é do Especialista).",
+          "Validar STE de itens críticos de sucesso.",
+          "Realizar code review e merge request. (do time Performance)",
+          "Sinalizar impactos (análise de impacto) e cenários não previstos (desde a análise).",
+          "Organizar a capacitação o time com treinamentos técnicos",
+          "Realizar feedbacks para o time",
+          "Realizar definições de infraestrutura.",
+          "Gerenciar backlog de arquitetura (como se fosse um PO)."
         ]
       },
       {
-        "groupName": "Group2",
+        "groupName": "Cliente/Stakeholders",
         "descriptions": [
-          "Facilitar as reuniões e cerimônias (como SP1, SP2, Dai",
-          "Facilitar as reuniões e cerimônias (como SP1, SP2, Dai",
-          "Facilitar as reuniões e cerimônias (como SP1, SP2, Dai",
-          "Facilitar as reuniões e cerimônias (como SP1, SP2, Dai",
-          "Facilitar as reuniões e cerimônias (como SP1, SP2, Dai"
+          "Ter uma visão técnica e de negócios abrangente.",
+          "Auxiliar com problemas referentes aos ambientes.",
+          "Definir e propor melhorias na arquitetura do produto (revisão do produto).",
+          "Definir e propor tecnologias que melhor adaptam ao produto.",
+          "Garantir a vida útil e sustentável do produto (análises de crescimento e escalabilidade).",
+          "Estar disponível ao time para ajudar a codar em cenários complexos.",
+          "Apoio com as outras áreas (implantação, comercial e suporte) para situações de problemas e ações específicas."
+        ]
+      },
+      {
+        "groupName": "Pessoas",
+        "descriptions": [
+          "Dar feedback honesto sobre os processos de gestão de pessoas e feedbacks informais.",
+          "Ajudar na evolução de competências técnicas e comportamentais dos especialistas e devs.",
+          "Formar novos Arquitetos."
+        ]
+      }
+    ],
+    "notResponsibilities": []
+  },
+  {
+    "id": 4,
+    "role": "Desenvolvedor(a)",
+    "responsibilities": [
+      {
+        "groupName": "Processo",
+        "descriptions": [
+          "Participar das cerimônias.",
+          "Zelar pela qualidade do código, manutenção do produto e processos de software.",
+          "Estimar entregas (ordem de grandeza ou dentro do ciclo).",
+          "Definição das soluções técnicas das atividades (STE, SP2).",
+          "Análise e desenvolvimento de funcionalidades e bugs.",
+          "Revisão de código.",
+          "Garantir qualidade e prazo.",
+          "Abrir Merge Request.",
+          "Codificar com alta cobertura de testes.",
+          "Compartilhar conhecimento técnico.",
+          "Propor melhorias de processo e código.",
+          "Aceitar o documento de análise.",
+          "Sinalizar impactos técnicos nas implementações propostas.",
+          "Sinalizar desvios de estimativa e prazos.",
+          "Sinalizar impedimentos."
+        ]
+      },
+      {
+        "groupName": "Cliente/Stakeholders",
+        "descriptions": [
+          "Monitoramento do sistema.",
+          "Espalhar a cultura DB1 na equipe.",
+          "Desenvolver soluções que gerem valor aos clientes internos e externos.",
+          "Auxiliar tirando dúvidas das regras de negócio.",
+          "Participar dos plantões semanais.",
+          "Estudar e propor inovações tecnológicas para o produto.",
+          "Tirar dúvidas quando solicitado.",
+          "Ajuda com tarefas de arquitetura, geralmente discutimos soluções que possam ser menos impactantes ao cliente."
+        ]
+      },
+      {
+        "groupName": "Pessoas",
+        "descriptions": [
+          "Dar feedback honesto sobre os processos de gestão de pessoas e feedbacks informais.",
+          "Ajudar na evolução de competências técnicas e comportamentais dos devs menos experiênte."
         ]
       }
     ],
     "notResponsibilities": [
-      "Remover impedimentos;",
-      "Remover impedimentos;",
-      "Remover impedimentos;",
-      "Remover impedimentos;",
-      "Remover impedimentos;",
-      "Remover impedimentos;"
+      "Análise de negócio.",
+      "Criação de mocks.",
+      "Monitoramento de ambiente.",
+      "Definição técnica com outros desenvolvedores das tarefas de erros e melhorias que seriam atribuídas aos especialistas."
     ]
+  },
+  {
+    "id": 5,
+    "role": "Especialista (Líder Técnico)",
+    "responsibilities": [
+      {
+        "groupName": "Processo",
+        "descriptions": [
+          "Todas as atribuições do Papel de Desenvolvedor.",
+          "Garantir que os trabalhos dos desenvolvedores estejam a melhor qualidade possível.",
+          "Realizar code review.",
+          "Auxiliar com dúvidas técnicas.",
+          "Analisar a entrada de bugs para que não voltem a ocorrer (Causa Raíz).",
+          "Especificação técnica e STE.",
+          "Apoio para a melhor distribuição de bugs.",
+          "Apoiar com definições de arquitetura.",
+          "Participar das soluções em tempo de análise quando solicitado.",
+          "Ser referência técnica.",
+          "Sinalizar impactos e cenários não previstos.",
+          "Realizar feedbacks para o time.",
+          "Garantir as boas práticas aplicadas no time."
+        ]
+      },
+      {
+        "groupName": "Cliente/Stakeholders",
+        "descriptions": [
+          "Procurar por plantonista na semana do time, caso não haja voluntário.",
+          "Reuniões com outros especialistas para análise da situação do projeto e ações que podem ser tomadas com o time, tanto técnicas como comportamentais.",
+          "Motivar o time técnico quanto a desafios."
+        ]
+      },
+      {
+        "groupName": "Pessoas",
+        "descriptions": [
+          "Dar feedback honesto sobre os processos de gestão de pessoas e feedbacks informais.",
+          "Ajudar na evolução de competências técnicas e comportamentais de desenvolvedores.",
+          "Formar novos Especialistas."
+        ]
+      }
+    ],
+    "notResponsibilities": [
+      "Análise de negócio e requisitos.",
+      "Facilitação de cerimônias."
+    ]
+  },
+  {
+    "id": 6,
+    "role": "PO (Product Owner)",
+    "responsibilities": [
+      {
+        "groupName": "Processo",
+        "descriptions": [
+          "Gerenciar o backlog: Priorizar e Descartar.",
+          "Gestão de entregas (prazos, versões e funcionalidades) do cliente.",
+          "Definição de roadmap e visão de futuro.",
+          "Definições de objetivos da funcionalidade (o que? por que? Valor esperado?).",
+          "Avaliação e aceitação da solução de análise.",
+          "Organização de épicos, features e PBIs.",
+          "Repasse de informações para o analista de negócios conseguir iniciar uma análise.",
+          "Entregar insumos para que o analista de negócios possa especificar a funcionalidade (contatos, ambientes de teste, usuários e senhas de acesso).",
+          "Quebrar tarefas em partes que sejam menores e façam sentido para agilizar o desenvolvimento e homologação.",
+          "Análise e Elaboração de Requisitos.",
+          "Garantir que o time sempre tenha uma quantidade adequada de tarefas preparadas anteriormente para trabalhar.",
+          "Aceitar ou rejeitar novas features desenvolvidas (Review).",
+          "Sinalizar tarefas que devem ir para o beta.",
+          "Participação nas cerimônias de Grooming, SP1 e Retrospectiva.",
+          "Sinalizar tarefas que devem ser implementadas como NFIX ou BUGFIX.",
+          "Definição do Objetivo da Sprint."
+        ]
+      },
+      {
+        "groupName": "Cliente/Stakeholders",
+        "descriptions": [
+          "Definir as diretrizes propostas para o futuro do produto, em relação a negócio e expectativas da empresa.",
+          "Levantamento de necessidades, cenários, informações e soluções com clientes e áreas de apoio.",
+          "Apresentação de andamento do backlog em reuniões.",
+          "Estar disponível ao time para definições e dúvidas de negócio. Ser facilitador.",
+          "Repasse das funcionalidades novas para clientes e áreas de apoio.",
+          "Feedback de features de clientes e áreas de apoio.",
+          "Escrita de artigo das funcionalidades.",
+          "Escrita do e-mail do beta com as informações das funcionalidades novas para equipe.",
+          "Encaminhar para o marketing informações de funcionalidades para serem divulgadas para base.",
+          "Reuniões e atendimentos com clientes e parceiros externos.",
+          "Organizar reuniões com clientes para entender os problemas e oportunidades de melhoria do produto.",
+          "Se comunicar com os marketplaces para tirar dúvidas.",
+          "Estar sempre antenado ao mercado.",
+          "Realizar reuniões de alinhamento sobre novas funcionalidades e funcionalidades existentes.",
+          "Desenvolver network com parceiros estratégicos, para que o time possa ter um respaldo ao resolver um problema.",
+          "Alinhamento com outras áreas do produto, para enriquecimento das informações sobre o produto, cliente e oportunidades de melhoria.",
+          "Conhecer o sistema pela visão do cliente."
+
+        ]
+      },
+      {
+        "groupName": "Pessoas",
+        "descriptions": [
+          "Dar feedback honesto sobre os processos de gestão de pessoas e feedbacks informais.",
+          "Ajudar na evolução de competências técnicas e comportamentais dos analistas.",
+          "Formar novos Product Owners."
+        ]
+      }
+    ],
+    "notResponsibilities": [
+      "Remover impedimentos do time.",
+      "Definições técnicas que são responsabilidades do especialista.",
+      "Responsabilidade de prototipação e usabilidade.",
+      "Atendimento aos parceiros de API.",
+      "Atendimento a clientes sobre bugs (Inclusão do P.O. em grupos com o cliente)."
+    ]
+  },
+  {
+    "id": 7,
+    "role": "QA (Quality Analyst)",
+    "responsibilities": [
+      {
+        "groupName": "Processo",
+        "descriptions": [
+          "Validar atividades desenvolvidas de acordo com os requisitos especificados.",
+          "Atualizar o ambiente de homologação com as branchs de atividades para testá-las.",
+          "Validar o beta.",
+          "Executar testes de interface.",
+          "Executar teste de API.",
+          "Criar roteiros de teste.",
+          "Evidenciar a execução da homologação.",
+          "Levantar erros no sistema.",
+          "Participar das cerimônias.",
+          "Realizar reuniões semanais de marco com membros da homologação.",
+          "Manter o time informado sobre o andamento dos testes.",
+          "Automatizar testes.",
+          "Validar fluxos e comportamentos esperados.",
+          "Aceitar o documento de análise.",
+          "Estimar o tempo de homologação das tarefas.",
+          "Realizar feedbacks para o time.",
+          "Documentar a homologação realizada.",
+          "Sinalizar impedimentos."
+        ]
+      },
+      {
+        "groupName": "Cliente/Stakeholders",
+        "descriptions": [
+          "Sugerir melhorias para o sistema.",
+          "Realizar reuniões de alinhamento sobre novas funcionalidades.",
+          "Sugerir melhorias para a documentação.",
+          "Participar das soluções em tempo de análise quando solicitado.",
+          "Sinalizar impactos e cenários não previstos.",
+          "Buscar adquirir novos conhecimentos sobre o produto para aprimorar sua homologação."
+
+        ]
+      },
+      {
+        "groupName": "Pessoas",
+        "descriptions": [
+          "Dar feedback honesto sobre os processos de gestão de pessoas e feedbacks informais.",
+          "Ajudar na evolução de competências técnicas e comportamentais dos QAs"
+        ]
+      }
+    ],
+    "notResponsibilities": []
   }
 ]

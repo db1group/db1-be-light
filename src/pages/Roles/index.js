@@ -3,17 +3,10 @@ import { withStyles } from '@material-ui/core/styles';
 import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
 import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import { Grid, Typography, Divider } from '@material-ui/core';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+import { Grid, Typography } from '@material-ui/core';
 
 import roles from './roles.json';
-import BoxResponsibility from '../../components/BoxResponsibility';
+import ResponsibilityCard from '../../components/ResponsibilityCard';
 
 const ExpansionPanel = withStyles({
   root: {
@@ -58,6 +51,15 @@ const ExpansionPanelDetails = withStyles((theme) => ({
   },
 }))(MuiExpansionPanelDetails);
 
+const Lane = withStyles({
+  root: {
+    background: '#f1f1f1',
+    borderRadius: '10px',
+    padding: 15,
+    marginTop: 20,
+  },
+})(Grid);
+
 export default function Roles() {
   const [expanded, setExpanded] = React.useState('');
 
@@ -82,79 +84,32 @@ export default function Roles() {
           </ExpansionPanelSummary>
 
           <ExpansionPanelDetails>
-            <Typography variant="h6" component="h2">
-              RESPONSABILIDADES:
-            </Typography>
-            <br />
-            {role.responsibilities.map((resp) => (
-              <Grid>
-                {/* <Typography variant="h6" component="h3">
-                  {resp.groupName}
-                </Typography> */}
-
-                {/* {resp.descriptions.map((desc, index) => (
-                  // eslint-disable-next-line react/no-array-index-key
-                  <BoxResponsibility key={index}>{desc}</BoxResponsibility>
-                ))} */}
-
-                <SimpleTable title={resp.groupName} rows={resp.descriptions} />
-                <br />
-              </Grid>
-            ))}
-            <br />
-            <Divider />
-            <br />
-            <Typography variant="h6" component="h2">
-              NÃO RESPONSABILIDADES:
-            </Typography>
-
-            {/* {role.notResponsibilities.map((desc, index) => (
+            {role.responsibilities.map((resp, i) => (
               // eslint-disable-next-line react/no-array-index-key
-              <BoxResponsibility key={index}>{desc}</BoxResponsibility>
-            ))} */}
+              <Lane key={i}>
+                <Typography variant="h6" component="h2">
+                  {resp.groupName}
+                </Typography>
 
-            <SimpleTable rows={role.notResponsibilities} />
+                {resp.descriptions.map((desc, index) => (
+                  // eslint-disable-next-line react/no-array-index-key
+                  <ResponsibilityCard key={index} description={desc} />
+                ))}
+              </Lane>
+            ))}
+            <Lane>
+              <Typography variant="h6" component="h2">
+                NÃO RESPONSABILIDADES:
+              </Typography>
+
+              {role.notResponsibilities.map((desc, index) => (
+                // eslint-disable-next-line react/no-array-index-key
+                <ResponsibilityCard key={index} description={desc} />
+              ))}
+            </Lane>
           </ExpansionPanelDetails>
         </ExpansionPanel>
       ))}
     </>
-  );
-}
-
-const StyledTableCell = withStyles((theme) => ({
-  head: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
-  },
-  body: {
-    fontSize: 14,
-  },
-}))(TableCell);
-
-function SimpleTable({ title, rows }) {
-  return (
-    <TableContainer component={Paper}>
-      <Table aria-label="simple table">
-        {title ? (
-          <TableHead>
-            <TableRow>
-              <StyledTableCell>{title}</StyledTableCell>
-            </TableRow>
-          </TableHead>
-        ) : (
-          <></>
-        )}
-
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row}>
-              <TableCell component="th" scope="row">
-                {row}
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
   );
 }
