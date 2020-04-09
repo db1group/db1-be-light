@@ -5,7 +5,7 @@ const Header = styled.div`
   height: 200px;
   width: 100%;
   top: 0;
-  background: #00335e;
+  background: #282B2C;
   background-size: 100% 100%;
 `;
 

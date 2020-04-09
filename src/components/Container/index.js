@@ -25,7 +25,6 @@ const Container = ({ classes }) => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
     setRoute(routes[newValue]);
-    console.log(route);
 
     window.location.assign(route);
   };
@@ -34,12 +33,14 @@ const Container = ({ classes }) => {
     <Grid className={classes.heightAdjust} item xs={12}>
       <Paper square>
         <Tabs
+          color="secondary"
           value={value}
           indicatorColor="primary"
           textColor="primary"
           onChange={handleChange}
         >
           <Tab
+            color="secondary"
             className={classes.heightTabs}
             label="Papéis e Responsabilidades"
           />
