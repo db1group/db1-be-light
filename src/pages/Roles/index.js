@@ -12,16 +12,13 @@ const ExpansionPanel = withStyles({
   root: {
     border: '1px solid rgba(0, 0, 0, .125)',
     boxShadow: 'none',
-    '&:not(:last-child)': {
-      borderBottom: 0,
-    },
     '&:before': {
       display: 'none',
     },
     '&$expanded': {
       margin: 'auto',
     },
-    marginBottom: '20px',
+    margin: '20px 0',
   },
   expanded: {},
 })(MuiExpansionPanel);
@@ -84,29 +81,30 @@ export default function Roles() {
           </ExpansionPanelSummary>
 
           <ExpansionPanelDetails>
-            {role.responsibilities.map((resp, i) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <Lane key={i}>
+            {role.responsibilities.map((resp) => (
+              <Lane key={resp.id}>
                 <Typography variant="h6" component="h2">
                   {resp.groupName}
                 </Typography>
 
-                {resp.descriptions.map((desc, index) => (
-                  // eslint-disable-next-line react/no-array-index-key
-                  <ResponsibilityCard key={index} description={desc} />
+                {resp.descriptions.map((desc) => (
+                  <ResponsibilityCard key={Math.random()} description={desc} />
                 ))}
               </Lane>
             ))}
-            <Lane>
-              <Typography variant="h6" component="h2">
-                NÃO RESPONSABILIDADES:
-              </Typography>
 
-              {role.notResponsibilities.map((desc, index) => (
-                // eslint-disable-next-line react/no-array-index-key
-                <ResponsibilityCard key={index} description={desc} />
-              ))}
-            </Lane>
+            {!role.notResponsibilities.length ? (
+              ''
+            ) : (
+              <Lane>
+                <Typography variant="h6" component="h2">
+                  Não responsabilidades:
+                </Typography>
+                {role.notResponsibilities.map((desc) => (
+                  <ResponsibilityCard key={Math.random()} description={desc} />
+                ))}
+              </Lane>
+            )}
           </ExpansionPanelDetails>
         </ExpansionPanel>
       ))}

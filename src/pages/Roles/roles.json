@@ -4,6 +4,7 @@
     "role": "AM (Agile Master)",
     "responsibilities": [
       {
+        "id": 1,
         "groupName": "Processo",
         "descriptions": [
           "Facilitar as reuniões e cerimônias (como SP1, SP2, Daily, estimativas, retrospectivas e etc).",
@@ -24,6 +25,7 @@
         ]
       },
       {
+        "id": 2,
         "groupName": "Cliente/Stakeholders",
         "descriptions": [
           "Facilitar a comunicação.",
@@ -33,6 +35,7 @@
         ]
       },
       {
+        "id": 3,
         "groupName": "Pessoas",
         "descriptions": [
           "Dar feedback honesto sobre os processos de gestão de pessoas e feedbacks informais.",
@@ -51,6 +54,7 @@
     "role": "Analista de Negócios",
     "responsibilities": [
       {
+        "id": 4,
         "groupName": "Processo",
         "descriptions": [
           "Dinâmicas de elicitação.",
@@ -69,6 +73,7 @@
         ]
       },
       {
+        "id": 5,
         "groupName": "Cliente/Stakeholders",
         "descriptions": [
           "Realizar reuniões de acompanhamento com o time de desenvolvimento.",
@@ -82,6 +87,7 @@
         ]
       },
       {
+        "id": 6,
         "groupName": "Pessoas",
         "descriptions": [
           "Dar feedback honesto sobre os processos de gestão de pessoas e feedbacks informais.",
@@ -104,6 +110,7 @@
     "role": "Arquiteto",
     "responsibilities": [
       {
+        "id": 7,
         "groupName": "Processo",
         "descriptions": [
           "Quando acionado, definir junto com os times soluções técnicas.",
@@ -121,6 +128,7 @@
         ]
       },
       {
+        "id": 8,
         "groupName": "Cliente/Stakeholders",
         "descriptions": [
           "Ter uma visão técnica e de negócios abrangente.",
@@ -133,6 +141,7 @@
         ]
       },
       {
+        "id": 9,
         "groupName": "Pessoas",
         "descriptions": [
           "Dar feedback honesto sobre os processos de gestão de pessoas e feedbacks informais.",
@@ -148,6 +157,7 @@
     "role": "Desenvolvedor(a)",
     "responsibilities": [
       {
+        "id": 10,
         "groupName": "Processo",
         "descriptions": [
           "Participar das cerimônias.",
@@ -168,6 +178,7 @@
         ]
       },
       {
+        "id": 11,
         "groupName": "Cliente/Stakeholders",
         "descriptions": [
           "Monitoramento do sistema.",
@@ -181,6 +192,7 @@
         ]
       },
       {
+        "id": 12,
         "groupName": "Pessoas",
         "descriptions": [
           "Dar feedback honesto sobre os processos de gestão de pessoas e feedbacks informais.",
@@ -200,6 +212,7 @@
     "role": "Especialista (Líder Técnico)",
     "responsibilities": [
       {
+        "id": 13,
         "groupName": "Processo",
         "descriptions": [
           "Todas as atribuições do Papel de Desenvolvedor.",
@@ -218,6 +231,7 @@
         ]
       },
       {
+        "id": 14,
         "groupName": "Cliente/Stakeholders",
         "descriptions": [
           "Procurar por plantonista na semana do time, caso não haja voluntário.",
@@ -226,6 +240,7 @@
         ]
       },
       {
+        "id": 15,
         "groupName": "Pessoas",
         "descriptions": [
           "Dar feedback honesto sobre os processos de gestão de pessoas e feedbacks informais.",
@@ -244,6 +259,7 @@
     "role": "PO (Product Owner)",
     "responsibilities": [
       {
+        "id": 16,
         "groupName": "Processo",
         "descriptions": [
           "Gerenciar o backlog: Priorizar e Descartar.",
@@ -265,6 +281,7 @@
         ]
       },
       {
+        "id": 17,
         "groupName": "Cliente/Stakeholders",
         "descriptions": [
           "Definir as diretrizes propostas para o futuro do produto, em relação a negócio e expectativas da empresa.",
@@ -288,6 +305,7 @@
         ]
       },
       {
+        "id": 18,
         "groupName": "Pessoas",
         "descriptions": [
           "Dar feedback honesto sobre os processos de gestão de pessoas e feedbacks informais.",
@@ -309,6 +327,7 @@
     "role": "QA (Quality Analyst)",
     "responsibilities": [
       {
+        "id": 19,
         "groupName": "Processo",
         "descriptions": [
           "Validar atividades desenvolvidas de acordo com os requisitos especificados.",
@@ -332,6 +351,7 @@
         ]
       },
       {
+        "id": 20,
         "groupName": "Cliente/Stakeholders",
         "descriptions": [
           "Sugerir melhorias para o sistema.",
@@ -344,6 +364,7 @@
         ]
       },
       {
+        "id": 21,
         "groupName": "Pessoas",
         "descriptions": [
           "Dar feedback honesto sobre os processos de gestão de pessoas e feedbacks informais.",

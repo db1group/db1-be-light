@@ -5,10 +5,12 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
+const mobile = window.matchMedia('(max-width: 600px)').matches;
+
 const styles = {
   card: {
-    width: 275,
-    height: 140,
+    width: mobile ? '100%' : 275,
+    height: mobile ? 'auto' : 140,
     display: 'inline-block',
     overflow: 'auto',
     margin: '15px 15px 0 0 ',

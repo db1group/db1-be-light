@@ -9,26 +9,37 @@ import { Grid, Card, Typography } from '@material-ui/core';
 import Header from './components/Header';
 import Container from './components/Container';
 import logo from './assets/logo.png';
+import light from './assets/light.png';
+
+const mobile = window.matchMedia('(max-width: 600px)').matches;
 
 const styles = () => ({
   root: {
-    padding: '130px 50px',
+    padding: mobile ? '130px 0' : '130px 50px',
     zIndex: 999,
     position: 'absolute',
   },
   title: {
     color: '#fefefe',
-    padding: '50px',
+    padding: mobile ? '50px 15px' : '50px',
   },
   titleSpan: {
-    position: 'absolute',
-    top: '65px',
-    left: '260px',
-    fontSize: '1.6rem',
+    fontSize: '2.3rem',
+    fontWeight: 100,
   },
   card: {
     display: 'flex',
     minHeight: 'calc(100vh - 100px)',
+  },
+  lightLogo: {
+    position: 'absolute',
+    left: '195px',
+    top: '16px',
+    transform: 'rotate(19deg)',
+  },
+  logoDb1: {
+    margin: '0 auto',
+    paddingTop: 30,
   },
 });
 
@@ -47,7 +58,13 @@ const App = ({ classes }) => (
   <ThemeProvider theme={theme}>
     <Header>
       <Typography className={classes.title} variant="h4" component="h3">
-        <img src={logo} alt="Logo DB1" width="200" /> <span className={classes.titleSpan}>#BeLight</span>
+        <span className={classes.titleSpan}>#BeLight</span>
+        <img
+          src={light}
+          alt="Logo BD1 Be Light"
+          width="50"
+          className={classes.lightLogo}
+        />{' '}
       </Typography>
     </Header>
     <Grid container className={classes.root}>
@@ -58,6 +75,7 @@ const App = ({ classes }) => (
           </Grid>
         </Card>
       </Grid>
+      <img src={logo} alt="Logo DB1" width="150" className={classes.logoDb1} />
     </Grid>
   </ThemeProvider>
 );

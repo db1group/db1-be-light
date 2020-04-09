@@ -7,7 +7,7 @@ export default function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={Roles} />
+        <Route path="/db1-be-light/" exact component={Roles} />
       </Switch>
     </BrowserRouter>
   );
