@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/db1-be-light/precache-manifest.a2555c809ccb9b3c915ec4750281a231.js"
+  "/db1-be-light/precache-manifest.0defb6ca0f387fe493cb65034b93231d.js"
 );
 
 self.addEventListener('message', (event) => {
