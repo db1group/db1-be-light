@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dbf16587c7b207e1a3e70438b6cfa8fd",
+    "revision": "f96e9c9cfbb01e05564d38e6c5504c71",
     "url": "/db1-be-light/index.html"
   },
   {
-    "revision": "5cab4f4144fa3e29aa45",
+    "revision": "e2680ec55fd06e6b837a",
     "url": "/db1-be-light/static/css/main.c5a52c2f.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/db1-be-light/static/js/2.ac74d092.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5cab4f4144fa3e29aa45",
-    "url": "/db1-be-light/static/js/main.83a3e6fc.chunk.js"
+    "revision": "e2680ec55fd06e6b837a",
+    "url": "/db1-be-light/static/js/main.e5261062.chunk.js"
   },
   {
     "revision": "752af9964f197a1f1aaf",
