@@ -33,7 +33,6 @@ const styles = () => ({
   },
   lightLogo: {
     position: 'absolute',
-    left: '195px',
     top: '16px',
     transform: 'rotate(19deg)',
   },
