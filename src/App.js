@@ -9,7 +9,7 @@ import { Grid, Card, Typography } from '@material-ui/core';
 import Header from './components/Header';
 import Container from './components/Container';
 import logo from './assets/logo.png';
-import light from './assets/light.png';
+import light from './assets/light_v2.png';
 
 const mobile = window.matchMedia('(max-width: 600px)').matches;
 
@@ -45,7 +45,7 @@ const theme = createMuiTheme({
       main: '#006D99',
     },
     secondary: {
-      main: '#fff',
+      main: '#00335E',
     },
   },
 });

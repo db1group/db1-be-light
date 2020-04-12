@@ -4,9 +4,14 @@ import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
 import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import { Grid, Typography } from '@material-ui/core';
+import TextField from '@material-ui/core/TextField';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import SearchRounded from '@material-ui/icons/SearchRounded';
 
 import roles from './roles.json';
 import ResponsibilityCard from '../../components/ResponsibilityCard';
+
+const mobile = window.matchMedia('(max-width: 600px)').matches;
 
 const ExpansionPanel = withStyles({
   root: {
@@ -57,8 +62,26 @@ const Lane = withStyles({
   },
 })(Grid);
 
+const InputFilter = withStyles({
+  root: {
+    width: mobile ? '100%' : '35%',
+  },
+})(TextField);
+
 export default function Roles() {
   const [expanded, setExpanded] = React.useState('');
+  const [name, setName] = React.useState('');
+  const [roleList, setRoleList] = React.useState(roles);
+
+  const handleFilter = (event) => {
+    const description = (event.target.value || '').toUpperCase();
+    setName(event.target.value);
+    const filteredRoles = roles.filter((role) => {
+      return role.role.toUpperCase().includes(description);
+    });
+
+    setRoleList(filteredRoles);
+  };
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
@@ -66,7 +89,21 @@ export default function Roles() {
 
   return (
     <>
-      {roles.map((role) => (
+      <InputFilter
+        color="secondary"
+        id="standard-name"
+        label="Filtrar papéis"
+        value={name}
+        onChange={handleFilter}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <SearchRounded />
+            </InputAdornment>
+          ),
+        }}
+      />
+      {roleList.map((role) => (
         <ExpansionPanel
           key={role.id}
           square
