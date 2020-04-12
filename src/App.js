@@ -20,8 +20,7 @@ const styles = () => ({
     position: 'absolute',
   },
   title: {
-    color: '#fefefe',
-    padding: mobile ? '50px 15px' : '50px',
+    textAlign: 'center',
   },
   titleSpan: {
     fontSize: '2.3rem',
@@ -32,10 +31,7 @@ const styles = () => ({
     minHeight: 'calc(100vh - 100px)',
   },
   lightLogo: {
-    position: 'absolute',
-    left: '195px',
-    top: '16px',
-    transform: 'rotate(19deg)',
+    padding: 25,
   },
   logoDb1: {
     margin: '0 auto',
@@ -46,7 +42,7 @@ const styles = () => ({
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#0099B7',
+      main: '#006D99',
     },
     secondary: {
       main: '#fff',
@@ -58,11 +54,10 @@ const App = ({ classes }) => (
   <ThemeProvider theme={theme}>
     <Header>
       <Typography className={classes.title} variant="h4" component="h3">
-        <span className={classes.titleSpan}>#BeLight</span>
         <img
           src={light}
           alt="Logo BD1 Be Light"
-          width="50"
+          width="200"
           className={classes.lightLogo}
         />{' '}
       </Typography>

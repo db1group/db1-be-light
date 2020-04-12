@@ -5,7 +5,7 @@ const Header = styled.div`
   height: 200px;
   width: 100%;
   top: 0;
-  background: #282B2C;
+  background-image: linear-gradient(to right,#282B2C, #006D99, #282B2C);
   background-size: 100% 100%;
 `;
 
