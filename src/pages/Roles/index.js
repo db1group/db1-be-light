@@ -135,7 +135,7 @@ export default function Roles() {
             ) : (
               <Lane>
                 <Typography variant="h6" component="h2">
-                  Não responsabilidades:
+                  Responsabilidades de outros papéis:
                 </Typography>
                 {role.notResponsibilities.map((desc) => (
                   <ResponsibilityCard key={Math.random()} description={desc} />
