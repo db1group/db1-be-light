@@ -174,7 +174,8 @@
           "Aceitar o documento de análise.",
           "Sinalizar impactos técnicos nas implementações propostas.",
           "Sinalizar desvios de estimativa e prazos.",
-          "Sinalizar impedimentos."
+          "Sinalizar impedimentos.",
+          "Criação de mocks."
         ]
       },
       {
@@ -202,7 +203,7 @@
     ],
     "notResponsibilities": [
       "Análise de negócio.",
-      "Criação de mocks.",
+      "Criação de protótipos de tela.",
       "Monitoramento de ambiente.",
       "Definição técnica com outros desenvolvedores das tarefas de erros e melhorias que seriam atribuídas aos especialistas."
     ]
