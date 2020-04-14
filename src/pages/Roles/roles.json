@@ -165,9 +165,10 @@
           "Estimar entregas (ordem de grandeza ou dentro do ciclo).",
           "Definição das soluções técnicas das atividades (STE, SP2).",
           "Análise e desenvolvimento de funcionalidades e bugs.",
-          "Revisão de código.",
+          "Analisar a entrada de bugs para que não voltem a ocorrer (Causa Raíz).",
+          "Realizar code review.",
           "Garantir qualidade e prazo.",
-          "Abrir Merge Request.",
+          "Seguir processo do Gitflow (abrir e fechar branchs)",
           "Codificar com alta cobertura de testes.",
           "Compartilhar conhecimento técnico.",
           "Propor melhorias de processo e código.",
@@ -175,7 +176,8 @@
           "Sinalizar impactos técnicos nas implementações propostas.",
           "Sinalizar desvios de estimativa e prazos.",
           "Sinalizar impedimentos.",
-          "Criação de mocks."
+          "Criação de mocks.",
+          "Configurar novos projetos no ambiente de homologação"
         ]
       },
       {
@@ -203,9 +205,8 @@
     ],
     "notResponsibilities": [
       "Análise de negócio.",
-      "Criação de protótipos de tela.",
-      "Monitoramento de ambiente.",
-      "Definição técnica com outros desenvolvedores das tarefas de erros e melhorias que seriam atribuídas aos especialistas."
+      "Definição técnica com outros desenvolvedores das tarefas de erros e melhorias que seriam atribuídas aos especialistas.",
+      "Dar prazo."
     ]
   },
   {
@@ -220,8 +221,8 @@
           "Garantir que os trabalhos dos desenvolvedores estejam a melhor qualidade possível.",
           "Realizar code review.",
           "Auxiliar com dúvidas técnicas.",
-          "Analisar a entrada de bugs para que não voltem a ocorrer (Causa Raíz).",
-          "Especificação técnica e STE.",
+          "Garantir que os bugs não voltem a ocorrer (Causa Raíz).",
+          "Garantir que seja feito especificação técnica e STE.",
           "Apoio para a melhor distribuição de bugs.",
           "Apoiar com definições de arquitetura.",
           "Participar das soluções em tempo de análise quando solicitado.",
@@ -252,7 +253,8 @@
     ],
     "notResponsibilities": [
       "Análise de negócio e requisitos.",
-      "Facilitação de cerimônias."
+      "Facilitação de cerimônias.",
+      "Dar prazo."
     ]
   },
   {
