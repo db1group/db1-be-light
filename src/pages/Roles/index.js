@@ -121,7 +121,7 @@ export default function Roles() {
             {role.responsibilities.map((resp) => (
               <Lane key={resp.id}>
                 <Typography variant="h6" component="h2">
-                  {resp.groupName}
+                  {resp.groupName} teste
                 </Typography>
 
                 {resp.descriptions.map((desc) => (
