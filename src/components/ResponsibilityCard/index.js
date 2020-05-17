@@ -11,9 +11,15 @@ const styles = {
   card: {
     width: mobile ? '100%' : 275,
     height: mobile ? 'auto' : 140,
-    display: 'inline-block',
     overflow: 'auto',
-    margin: '15px 15px 0 0 ',
+    margin: 5,
+    display: 'flex',
+    alignItems: 'center',
+    alignContent: 'center',
+  },
+  title: {
+    margin: '0 auto !important',
+    textAlign: 'center',
   },
 };
 
@@ -22,7 +28,7 @@ function ResponsibilityCard(props) {
 
   return (
     <Card className={classes.card}>
-      <CardContent>
+      <CardContent className={classes.title}>
         <Typography component="p">{description}</Typography>
       </CardContent>
     </Card>

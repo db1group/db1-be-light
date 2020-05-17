@@ -20,9 +20,6 @@ const ExpansionPanel = withStyles({
     '&:before': {
       display: 'none',
     },
-    '&$expanded': {
-      margin: 'auto',
-    },
     margin: '20px 0',
   },
   expanded: {},
@@ -57,8 +54,13 @@ const Lane = withStyles({
   root: {
     background: '#f1f1f1',
     borderRadius: '10px',
-    padding: 15,
+    padding: 10,
     marginTop: 20,
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    alignContent: 'center',
   },
 })(Grid);
 
@@ -67,6 +69,12 @@ const InputFilter = withStyles({
     width: mobile ? '100%' : '35%',
   },
 })(TextField);
+
+const Title = withStyles({
+  root: {
+    width: '100%',
+  },
+})(Typography);
 
 export default function Roles() {
   const [expanded, setExpanded] = React.useState('');
@@ -120,9 +128,9 @@ export default function Roles() {
           <ExpansionPanelDetails>
             {role.responsibilities.map((resp) => (
               <Lane key={resp.id}>
-                <Typography variant="h6" component="h2">
-                  {resp.groupName} teste
-                </Typography>
+                <Title variant="h6" component="h2">
+                  {resp.groupName}
+                </Title>
 
                 {resp.descriptions.map((desc) => (
                   <ResponsibilityCard key={Math.random()} description={desc} />
@@ -134,9 +142,9 @@ export default function Roles() {
               ''
             ) : (
               <Lane>
-                <Typography variant="h6" component="h2">
+                <Title variant="h6" component="h2">
                   Responsabilidades de outros papéis:
-                </Typography>
+                </Title>
                 {role.notResponsibilities.map((desc) => (
                   <ResponsibilityCard key={Math.random()} description={desc} />
                 ))}
