@@ -9,6 +9,7 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import SearchRounded from '@material-ui/icons/SearchRounded';
 
 import roles from './roles.json';
+import Shell from '../../components/Shell';
 import ResponsibilityCard from '../../components/ResponsibilityCard';
 
 const mobile = window.matchMedia('(max-width: 600px)').matches;
@@ -96,7 +97,7 @@ export default function Roles() {
   };
 
   return (
-    <>
+    <Shell activeRoute="1">
       <InputFilter
         color="secondary"
         id="standard-name"
@@ -138,9 +139,7 @@ export default function Roles() {
               </Lane>
             ))}
 
-            {!role.notResponsibilities.length ? (
-              ''
-            ) : (
+            {role.notResponsibilities.length && (
               <Lane>
                 <Title variant="h6" component="h2">
                   Responsabilidades de outros papéis:
@@ -153,6 +152,6 @@ export default function Roles() {
           </ExpansionPanelDetails>
         </ExpansionPanel>
       ))}
-    </>
+    </Shell>
   );
 }

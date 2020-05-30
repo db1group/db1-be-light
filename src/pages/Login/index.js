@@ -8,14 +8,20 @@ export default () => {
 
   const authHandler = (err, { authResponseWithAccessToken }) => {
     const { name, userName } = authResponseWithAccessToken.account;
-    console.log({ name, userName });
+  };
+
+  const openLogin = (element) => {
+    element.click();
   };
 
   return (
     <MicrosoftLogin
+      id="microsoftLogin"
       clientId={CLIENT_ID}
       tenantUrl={TENANT_URL}
       authCallback={authHandler}
-    />
+    >
+      <p ref={openLogin} />
+    </MicrosoftLogin>
   );
 };
