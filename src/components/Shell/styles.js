@@ -18,10 +18,10 @@ export const Header = styled.div`
 
 export const LogoDb1 = styled.img`
   position: absolute;
-  padding-top: 30px;
   margin: 0 auto;
   left: 0;
   right: 0;
+  bottom: -50px;
 `;
 
 export const StyledTab = withStyles({
@@ -44,10 +44,12 @@ export const StyledPaper = withStyles({
 
 export const ContainerBox = withStyles({
   root: {
-    background: '#FFFFFF',
     position: 'absolute',
     left: 0,
+    width: 'calc(100% - 100px)',
     margin: '100px 50px 0 50px;',
+    background: '#FFFFFF',
     borderRadius: '4px',
+    minHeight: 'calc(100vh - 200px)',
   },
 })(Grid);
