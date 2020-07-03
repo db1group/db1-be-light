@@ -20,7 +20,6 @@ export const ExpansionPanel = withStyles({
   expanded: {},
 })(MuiExpansionPanel);
 
-
 export const ExpansionPanelSummary = withStyles({
   root: {
     backgroundColor: 'rgba(0, 0, 0, .03)',

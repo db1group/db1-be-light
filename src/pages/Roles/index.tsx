@@ -1,5 +1,5 @@
-import React from 'react';
-import { Typography } from '@material-ui/core';
+import React, { ChangeEvent } from 'react';
+import { Typography, InputProps, ValueLabelProps } from '@material-ui/core';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import SearchRounded from '@material-ui/icons/SearchRounded';
 
@@ -16,14 +16,15 @@ import {
   Title,
 } from './styles';
 
-export default function Roles() {
+const Roles: React.FC = () => {
   const [expanded, setExpanded] = React.useState('');
   const [name, setName] = React.useState('');
   const [roleList, setRoleList] = React.useState(roles);
 
-  const handleFilter = (event) => {
-    const description = (event.target.value || '').toUpperCase();
-    setName(event.target.value);
+  const handleFilter = (value: string) => {
+
+    const description = (value || '').toUpperCase();
+    setName(value);
     const filteredRoles = roles.filter((role) => {
       return role.role.toUpperCase().includes(description);
     });
@@ -31,8 +32,8 @@ export default function Roles() {
     setRoleList(filteredRoles);
   };
 
-  const handleChange = (panel) => (event, newExpanded) => {
-    setExpanded(newExpanded ? panel : false);
+  const handleChange = (panel: string) => (event: ChangeEvent, newExpanded: boolean) => {
+    setExpanded(newExpanded ? panel : '');
   };
 
   return (
@@ -42,7 +43,7 @@ export default function Roles() {
         id="standard-name"
         label="Filtrar papéis"
         value={name}
-        onChange={handleFilter}
+        onChange={(event) => {handleFilter(event.target.value)}}
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
@@ -56,7 +57,7 @@ export default function Roles() {
           key={role.id}
           square
           expanded={expanded === `panel_${role.id}`}
-          onChange={handleChange(`panel_${role.id}`)}
+          onChange={() => {handleChange(`panel_${role.id}`)}}
         >
           <ExpansionPanelSummary
             aria-controls="panel2d-content"
@@ -68,17 +69,17 @@ export default function Roles() {
           <ExpansionPanelDetails>
             {role.responsibilities.map((resp) => (
               <Lane key={resp.id}>
-                <Title variant="h6" component="h2">
+                <Title variant="h6">
                   {resp.groupName}
                 </Title>
 
-                {resp.descriptions.map((desc) => (
+                {/* {resp.descriptions.map((desc: string) => (
                   <ResponsibilityCard key={Math.random()} description={desc} />
-                ))}
+                ))} */}
               </Lane>
             ))}
 
-            {role.notResponsibilities.length && (
+            {/* {role.notResponsibilities.length && (
               <Lane>
                 <Title variant="h6" component="h2">
                   Responsabilidades de outros papéis:
@@ -87,10 +88,12 @@ export default function Roles() {
                   <ResponsibilityCard key={Math.random()} description={desc} />
                 ))}
               </Lane>
-            )}
+            )} */}
           </ExpansionPanelDetails>
         </ExpansionPanel>
       ))}
     </Shell>
   );
 }
+
+export default Roles;
