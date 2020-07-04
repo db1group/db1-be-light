@@ -4,17 +4,16 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import SearchRounded from '@material-ui/icons/SearchRounded';
 
 import roles from './roles.json';
-import Shell from '../../components/Shell';
+import Shell from '../../components/_Shell';
 import ResponsibilityCard from '../../components/ResponsibilityCard';
 
 import {
-  ExpansionPanel,
-  ExpansionPanelSummary,
-  ExpansionPanelDetails,
   Lane,
   InputFilter,
   Title,
 } from './styles';
+
+import { Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core'
 
 const Roles: React.FC = () => {
   const [expanded, setExpanded] = React.useState('');
@@ -37,7 +36,7 @@ const Roles: React.FC = () => {
   };
 
   return (
-    <Shell activeRoute="roles">
+    <>
       <InputFilter
         color="secondary"
         id="standard-name"
@@ -53,20 +52,20 @@ const Roles: React.FC = () => {
         }}
       />
       {roleList.map((role) => (
-        <ExpansionPanel
+        <Accordion
           key={role.id}
           square
           expanded={expanded === `panel_${role.id}`}
           onChange={() => {handleChange(`panel_${role.id}`)}}
         >
-          <ExpansionPanelSummary
+          <AccordionSummary
             aria-controls="panel2d-content"
             id="panel2d-header"
           >
             <Typography>{role.role}</Typography>
-          </ExpansionPanelSummary>
+          </AccordionSummary>
 
-          <ExpansionPanelDetails>
+          <AccordionDetails>
             {role.responsibilities.map((resp) => (
               <Lane key={resp.id}>
                 <Title variant="h6">
@@ -89,10 +88,10 @@ const Roles: React.FC = () => {
                 ))}
               </Lane>
             )} */}
-          </ExpansionPanelDetails>
-        </ExpansionPanel>
+          </AccordionDetails>
+        </Accordion>
       ))}
-    </Shell>
+    </>
   );
 }
 

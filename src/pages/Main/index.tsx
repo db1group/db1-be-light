@@ -1,26 +1,15 @@
 import React from 'react';
 
-import Shell from '../../components/Shell';
+import Sidebar from '../../components/Sidebar';
+import Navbar from '../../components/Navbar';
 
-import { Header } from './styles';
+import { Content } from '../../components/Shell/styles';
 
-const Main: React.FC = () => {
+const Main: React.FC = ({ children }) => {
   return (
-    <Shell activeRoute="main">
-      <Header>
-        <img
-          src="https://avatars2.githubusercontent.com/u/8760873?v=4"
-          alt="Profile img"
-        />
-        <div>
-          <p>Larissa Pissurno</p>
-          <small>larissa.pissurno@db1.com.br</small>
-          <span>
-            <small>Desenvolvedor(a)</small>
-          </span>
-        </div>
-      </Header>
-    </Shell>
+    <h1>
+  hello
+    </h1>
   );
 }
 

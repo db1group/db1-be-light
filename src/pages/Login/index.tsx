@@ -19,7 +19,7 @@ const Login: React.FC = () => {
     const { name, userName } = auth.authResponseWithAccessToken.account;
 
     localStorage.setItem('userData', JSON.stringify({ name, userName }));
-    console.log('nao deveria fazer o push?')
+
     history.push('/db1-be-light/main');
   };
 

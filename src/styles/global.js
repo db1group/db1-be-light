@@ -17,9 +17,11 @@ export default createGlobalStyle`
   }
 
   #root {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    padding: 20px;
+    background: #F4F7F2;
   }
 
   button {
