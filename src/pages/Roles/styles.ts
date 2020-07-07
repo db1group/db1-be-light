@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
@@ -70,3 +72,24 @@ export const Title = withStyles({
     width: '100%',
   },
 })(Typography);
+
+
+export const Box = styled.div`
+  background: #ffffff;
+  border: 1.3px solid #eaeaea;
+  height: 200px;
+  width: 200px;
+  border-radius: 15px;
+  margin: 0 10px 20px 0;
+`;
+
+export const Content = styled.div`
+  padding: 20px;
+  margin-top: 80px;
+
+  div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+`;

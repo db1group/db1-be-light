@@ -7,7 +7,7 @@ import {
   Theme,
 } from '@material-ui/core/styles';
 
-import { NavbarButton } from './styles';
+import { NavbarButton, Nav } from './styles';
 import { strict } from 'assert';
 
 const useStyles = makeStyles(_ =>
@@ -23,24 +23,25 @@ const Navbar: React.FC = () => {
   const pathname = 'main';
 
   const handleRoute = (route: string) => {
+    window.location.href = `${process.env.PUBLIC_URL}/${route}`;
   }
 
   return (
-    <>
+    <Nav>
       <NavbarButton
         className={!pathname.includes('main') ? classes.margin : ''}
-        onClick={() => handleRoute('/main')}
+        onClick={() => handleRoute('main')}
         >
         Meus dados
       </NavbarButton>
 
       <NavbarButton
         className={!pathname.includes('roles') ? classes.margin : ''}
-        onClick={() => handleRoute('/roles')}
+        onClick={() => handleRoute('roles')}
         >
         Papéis e responsabilidades
       </NavbarButton>
-    </>
+    </Nav>
   );
 };
 

@@ -21,7 +21,7 @@ export default createGlobalStyle`
     height: 100vh;
     display: flex;
     padding: 20px;
-    background: #F4F7F2;
+    background: #F7F9FB;
   }
 
   button {

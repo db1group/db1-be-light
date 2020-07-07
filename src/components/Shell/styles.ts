@@ -5,4 +5,5 @@ export const Content = styled.div`
   width: 100%;
   border-radius: 15px;
   margin-bottom: 20px;
+  overflow: auto;
 `;
