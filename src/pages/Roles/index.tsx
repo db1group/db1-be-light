@@ -4,7 +4,11 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import SearchRounded from '@material-ui/icons/SearchRounded';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
-
+import TextField from '@material-ui/core/TextField';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormControl from '@material-ui/core/FormControl';
+import { Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core'
 
 import roles from './roles.json';
 import Shell from '../../components/_Shell';
@@ -14,10 +18,10 @@ import {
   Box,
   Content,
   Lane,
-  Title
+  Title,
+  ExpansionPanelDetails
 } from './styles';
 
-import { Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -29,7 +33,8 @@ const useStyles = makeStyles((theme: Theme) =>
       borderBottomLeftRadius: '15px !important',
       borderBottomRightRadius: '15px !important',
       borderRadius: 15,
-      position: 'unset'
+      position: 'unset',
+      marginTop: 20
     },
     summary: {
       width: '100%',
@@ -38,6 +43,9 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: theme.typography.pxToRem(15),
       fontWeight: theme.typography.fontWeightRegular,
     },
+    filter: {
+      width: '100%'
+    }
   }),
 );
 
@@ -58,43 +66,25 @@ const Roles: React.FC = () => {
     setRoleList(filteredRoles);
   };
 
-  const handleChange = (panel: string) => (event: ChangeEvent, newExpanded: boolean) => {
-    setExpanded(newExpanded ? panel : '');
-  };
-
   return (
     <Content>
-      {/* <InputFilter
-        color="secondary"
-        id="standard-name"
-        label="Filtrar papéis"
-        value={name}
-        onChange={(event) => {handleFilter(event.target.value)}}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <SearchRounded />
-            </InputAdornment>
-          ),
-        }}
-      /> */}
+      <FormControl fullWidth>
 
-{/* <Accordion className={classes.accordion}>
-          <AccordionSummary
-            className={classes.summary}
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            <Typography className={classes.heading}>Accordion 1</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-              sit amet blandit leo lobortis eget.
-            </Typography>
-          </AccordionDetails>
-        </Accordion> */}
+        <TextField
+          className={classes.filter}
+          id="filled-basic"
+          label="Filtrar papéis"
+          onChange={(event) => {handleFilter(event.target.value)}}
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <SearchRounded />
+              </InputAdornment>
+            ),
+          }}
+        />
+      </FormControl>
+
       {roleList.map((role) => (
         <Accordion
           className={classes.accordion}
@@ -109,13 +99,12 @@ const Roles: React.FC = () => {
             <Typography className={classes.heading}>{role.role}</Typography>
           </AccordionSummary>
 
-          <AccordionDetails>
+          <ExpansionPanelDetails>
             {role.responsibilities.map((resp) => (
               <Lane key={resp.id}>
                 <Title variant="h6">
                   {resp.groupName}
                 </Title>
-
                 {resp.descriptions.map((desc: string) => (
                   <ResponsibilityCard key={Math.random()} description={desc} />
                 ))}
@@ -125,18 +114,14 @@ const Roles: React.FC = () => {
             {role.notResponsibilities.length && (
               <Lane>
                 <Title variant="h6">
-                  Responsabilidades de outros papéis:
+                  Não Responsabilidades:
                 </Title>
                 {role.notResponsibilities.map((desc) => (
                   <ResponsibilityCard key={Math.random()} description={desc} />
                 ))}
               </Lane>
             )}
-             {/* <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-              sit amet blandit leo lobortis eget.
-            </Typography> */}
-          </AccordionDetails>
+          </ExpansionPanelDetails>
         </Accordion>
       ))}
     </Content>

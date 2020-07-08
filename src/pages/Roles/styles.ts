@@ -4,11 +4,25 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
 import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import MuiExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
 
 const mobile = window.matchMedia('(max-width: 600px)').matches;
+
+export const Box = styled.div`
+  background: #ffffff;
+  border: 1.3px solid #eaeaea;
+  height: 200px;
+  width: 200px;
+  border-radius: 15px;
+  margin: 0 10px 20px 0;
+`;
+
+export const Content = styled.div`
+  padding: 20px;
+  margin-top: 80px;
+`;
 
 export const ExpansionPanel = withStyles({
   root: {
@@ -42,10 +56,9 @@ export const ExpansionPanelSummary = withStyles({
 
 export const ExpansionPanelDetails = withStyles((theme) => ({
   root: {
-    padding: theme.spacing(2),
-    flexDirection: 'column',
+    flexFlow: 'row wrap'
   },
-}))(MuiExpansionPanelDetails);
+}))(AccordionDetails);
 
 export const Lane = withStyles({
   root: {
@@ -63,33 +76,13 @@ export const Lane = withStyles({
 
 export const InputFilter = withStyles({
   root: {
-    width: mobile ? '100%' : '35%',
+    width: mobile ? '100%' : '50%',
   },
 })(TextField);
 
 export const Title = withStyles({
   root: {
     width: '100%',
+    marginBottom: 15
   },
 })(Typography);
-
-
-export const Box = styled.div`
-  background: #ffffff;
-  border: 1.3px solid #eaeaea;
-  height: 200px;
-  width: 200px;
-  border-radius: 15px;
-  margin: 0 10px 20px 0;
-`;
-
-export const Content = styled.div`
-  padding: 20px;
-  margin-top: 80px;
-
-  div {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-  }
-`;

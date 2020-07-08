@@ -12,7 +12,7 @@ import { strict } from 'assert';
 
 const useStyles = makeStyles(_ =>
   createStyles({
-    margin: {
+    active: {
       color: '#7f817e',
     },
   }),
@@ -29,14 +29,14 @@ const Navbar: React.FC = () => {
   return (
     <Nav>
       <NavbarButton
-        className={!pathname.includes('main') ? classes.margin : ''}
+        className={!window.location.href.includes('main') ? classes.active : ''}
         onClick={() => handleRoute('main')}
         >
         Meus dados
       </NavbarButton>
 
       <NavbarButton
-        className={!pathname.includes('roles') ? classes.margin : ''}
+        className={!window.location.href.includes('roles') ? classes.active : ''}
         onClick={() => handleRoute('roles')}
         >
         Papéis e responsabilidades
