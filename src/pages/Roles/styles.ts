@@ -21,7 +21,7 @@ export const Box = styled.div`
 
 export const Content = styled.div`
   padding: 20px;
-  margin-top: 80px;
+  margin-top: 60px;
 `;
 
 export const ExpansionPanel = withStyles({

@@ -13,6 +13,11 @@ export const NavbarButton = withStyles({
 
 export const Nav = styled.nav`
   position: fixed;
-  background: #F7F9FB;
+  background: #f7f9fb;
   width: 100%;
+  height: 85px;
+  top: 0;
+  opacity: 1;
+  z-index: 999;
+  padding: 15px 10px;
 `;

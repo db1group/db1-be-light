@@ -33,6 +33,7 @@ export const Header = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding: 0 20px;
 
   img {
     width: 100px;
@@ -41,7 +42,7 @@ export const Header = styled.div`
 
   p {
     line-height: 2rem;
-    margin-top: 15px;
+    margin: 15px 0;
     font-size: 20px;
   }
 
@@ -57,9 +58,8 @@ export const Header = styled.div`
     margin-top: 10px;
     border-radius: 6px;
     text-transform: uppercase;
-    padding: 4px 10px;
+    padding: 4px 20px;
     background: #006d9926;
-    display: block;
     text-align: center;
   }
 `;

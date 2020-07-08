@@ -3,10 +3,6 @@ import MicrosoftLogin from 'react-microsoft-login';
 import { AuthError } from "msal";
 import { useHistory } from 'react-router-dom';
 
-// interface AuthResponse {
-
-// }
-
 const Login: React.FC = () => {
   const history = useHistory();
   const CLIENT_ID = 'c3fe5059-0d49-4286-97d2-f8a084961cff';
@@ -17,6 +13,9 @@ const Login: React.FC = () => {
     if (!auth) { return; }
 
     const { name, userName } = auth.authResponseWithAccessToken.account;
+
+    console.log(auth.authResponseWithAccessToken.account);
+
 
     localStorage.setItem('userData', JSON.stringify({ name, userName }));
 

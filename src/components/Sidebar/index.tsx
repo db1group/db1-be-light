@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import ExitToApp from '@material-ui/icons/ExitToApp';
 
 import { Content, Header, Inventory, Separator } from './styles';
 
+interface User {
+  name: string;
+  userName: string;
+}
+
 const Sidebar: React.FC = () => {
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    const localUser = localStorage.getItem('userData');
+    const storagedUser = localUser ? JSON.parse(localUser) : null;
+    console.log(localStorage.getItem('userData'));
+    setUser(storagedUser);
+  }, []);
+
   return (
     <Content>
       <ExitToApp titleAccess="Sair" />
@@ -16,7 +30,7 @@ const Sidebar: React.FC = () => {
         />
 
         <div>
-          <p>Larissa Pissurno</p>
+          <p>{user?.name}</p>
           {/* <small>larissa.pissurno@db1.com.br</small> */}
           <span>
             <small>Desenvolvedor(a)</small>

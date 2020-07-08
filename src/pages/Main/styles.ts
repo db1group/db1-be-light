@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 
 export const Content = styled.div`
-  /* background: #ffffff; */
   padding: 20px;
   border-radius: 15px;
   margin-top: 80px;
-  /* border: 1.3px solid #eaeaea; */
 
   div {
     display: flex;
