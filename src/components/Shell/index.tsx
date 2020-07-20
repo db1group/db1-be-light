@@ -1,5 +1,4 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 
 import Sidebar from '../Sidebar';
 import Navbar from '../Navbar';
@@ -7,8 +6,6 @@ import Navbar from '../Navbar';
 import { Content } from './styles';
 
 const Shell: React.FC = ({ children }) => {
-  const history = useHistory();
-
   return (
     <>
       <Sidebar />
@@ -19,6 +16,6 @@ const Shell: React.FC = ({ children }) => {
       </Content>
     </>
   );
-}
+};
 
 export default Shell;

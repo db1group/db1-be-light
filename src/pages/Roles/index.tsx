@@ -8,20 +8,17 @@ import TextField from '@material-ui/core/TextField';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
-import { Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core'
+import {
+  ExpansionPanel,
+  ExpansionPanelSummary,
+  ExpansionPanelDetails,
+} from '@material-ui/core';
 
 import roles from './roles.json';
 import Shell from '../../components/_Shell';
 import ResponsibilityCard from '../../components/ResponsibilityCard';
 
-import {
-  Box,
-  Content,
-  Lane,
-  Title,
-  ExpansionPanelDetails
-} from './styles';
-
+import { Box, Content, Lane, Title } from './styles';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -34,7 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
       borderBottomRightRadius: '15px !important',
       borderRadius: 15,
       position: 'unset',
-      marginTop: 20
+      marginTop: 20,
     },
     summary: {
       width: '100%',
@@ -44,9 +41,9 @@ const useStyles = makeStyles((theme: Theme) =>
       fontWeight: theme.typography.fontWeightRegular,
     },
     filter: {
-      width: '100%'
-    }
-  }),
+      width: '100%',
+    },
+  })
 );
 
 const Roles: React.FC = () => {
@@ -56,7 +53,6 @@ const Roles: React.FC = () => {
   const [roleList, setRoleList] = React.useState(roles);
 
   const handleFilter = (value: string) => {
-
     const description = (value || '').toUpperCase();
     setName(value);
     const filteredRoles = roles.filter((role) => {
@@ -69,12 +65,13 @@ const Roles: React.FC = () => {
   return (
     <Content>
       <FormControl fullWidth>
-
         <TextField
           className={classes.filter}
           id="filled-basic"
           label="Filtrar papéis"
-          onChange={(event) => {handleFilter(event.target.value)}}
+          onChange={(event) => {
+            handleFilter(event.target.value);
+          }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -86,25 +83,20 @@ const Roles: React.FC = () => {
       </FormControl>
 
       {roleList.map((role) => (
-        <Accordion
-          className={classes.accordion}
-          key={role.id}
-        >
-          <AccordionSummary
+        <ExpansionPanel className={classes.accordion} key={role.id}>
+          <ExpansionPanelSummary
             className={classes.summary}
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel2d-content"
             id="panel2d-header"
           >
             <Typography className={classes.heading}>{role.role}</Typography>
-          </AccordionSummary>
+          </ExpansionPanelSummary>
 
           <ExpansionPanelDetails>
             {role.responsibilities.map((resp) => (
               <Lane key={resp.id}>
-                <Title variant="h6">
-                  {resp.groupName}
-                </Title>
+                <Title variant="h6">{resp.groupName}</Title>
                 {resp.descriptions.map((desc: string) => (
                   <ResponsibilityCard key={Math.random()} description={desc} />
                 ))}
@@ -113,19 +105,17 @@ const Roles: React.FC = () => {
 
             {role.notResponsibilities.length && (
               <Lane>
-                <Title variant="h6">
-                  Não Responsabilidades:
-                </Title>
+                <Title variant="h6">Não Responsabilidades:</Title>
                 {role.notResponsibilities.map((desc) => (
                   <ResponsibilityCard key={Math.random()} description={desc} />
                 ))}
               </Lane>
             )}
           </ExpansionPanelDetails>
-        </Accordion>
+        </ExpansionPanel>
       ))}
     </Content>
   );
-}
+};
 
 export default Roles;

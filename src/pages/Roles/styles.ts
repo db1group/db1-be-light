@@ -6,7 +6,6 @@ import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
 import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
 
 const mobile = window.matchMedia('(max-width: 600px)').matches;
 
@@ -54,11 +53,11 @@ export const ExpansionPanelSummary = withStyles({
   expanded: {},
 })(MuiExpansionPanelSummary);
 
-export const ExpansionPanelDetails = withStyles((theme) => ({
-  root: {
-    flexFlow: 'row wrap'
-  },
-}))(AccordionDetails);
+// export const ExpansionPanelDetails = withStyles((theme) => ({
+//   root: {
+//     flexFlow: 'row wrap'
+//   },
+// }))(AccordionDetails);
 
 export const Lane = withStyles({
   root: {
@@ -83,6 +82,6 @@ export const InputFilter = withStyles({
 export const Title = withStyles({
   root: {
     width: '100%',
-    marginBottom: 15
+    marginBottom: 15,
   },
 })(Typography);

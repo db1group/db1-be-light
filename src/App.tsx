@@ -20,11 +20,11 @@ const theme = createMuiTheme({
 
 const App: React.FC = () => (
   <ThemeProvider theme={theme}>
-    <Shell>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Shell>
         <Routes />
-      </BrowserRouter>
-    </Shell>
+      </Shell>
+    </BrowserRouter>
     <GlobalStyle />
   </ThemeProvider>
 );
