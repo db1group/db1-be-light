@@ -17,7 +17,7 @@ const RoleDialog: React.FC<RoleDialogProps> = ({
   isOpen,
   userName,
 }: RoleDialogProps) => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   useEffect(() => {
     setOpen(isOpen);

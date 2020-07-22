@@ -1,17 +1,26 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import Login from './pages/Login';
 import Roles from './pages/Roles';
-import Main from './pages/Main';
+import MyData from './pages/MyData';
 
 export default function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/db1-be-light/" exact component={Login} />
-        <Route path="/db1-be-light/main" component={Main} />
-        <Route path="/db1-be-light/roles" component={Roles} />
+        <Route
+          exact
+          path={`${process.env.PUBLIC_URL}/`}
+          render={() => <Redirect to={process.env.PUBLIC_URL + '/login'} />}
+        />
+        <Route
+          path={`${process.env.PUBLIC_URL}/login`}
+          exact
+          component={Login}
+        />
+        <Route path={`${process.env.PUBLIC_URL}/main`} component={MyData} />
+        <Route path={`${process.env.PUBLIC_URL}/roles`} component={Roles} />
       </Switch>
     </BrowserRouter>
   );

@@ -5,7 +5,7 @@ import Navbar from '../../components/Navbar';
 
 import { Content, Box } from './styles';
 
-const Main: React.FC = ({ children }) => {
+const MyData: React.FC = ({ children }) => {
   return (
     <Content>
       <p>Papel: Desenvolvedor(a)</p>
@@ -47,4 +47,4 @@ const Main: React.FC = ({ children }) => {
   );
 }
 
-export default Main;
+export default MyData;

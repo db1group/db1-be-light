@@ -18,15 +18,17 @@ const theme = createMuiTheme({
   },
 });
 
-const App: React.FC = () => (
-  <ThemeProvider theme={theme}>
-    <BrowserRouter>
-      <Shell>
-        <Routes />
-      </Shell>
-    </BrowserRouter>
-    <GlobalStyle />
-  </ThemeProvider>
-);
+const App: React.FC = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Shell>
+          <Routes />
+        </Shell>
+      </BrowserRouter>
+      <GlobalStyle />
+    </ThemeProvider>
+  );
+};
 
 export default App;
