@@ -19,7 +19,7 @@ export default function Routes() {
           exact
           component={Login}
         />
-        <Route path={`${process.env.PUBLIC_URL}/main`} component={MyData} />
+        <Route path={`${process.env.PUBLIC_URL}/home`} component={MyData} />
         <Route path={`${process.env.PUBLIC_URL}/roles`} component={Roles} />
       </Switch>
     </BrowserRouter>

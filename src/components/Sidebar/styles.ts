@@ -1,19 +1,20 @@
 import styled from 'styled-components';
 import { withStyles } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
+import Avatar from '@material-ui/core/Avatar';
 
 export const Content = styled.div`
   height: calc(100vh - 40px);
   width: 400px;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 15px;
   margin-right: 20px;
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  -webkit-box-shadow: 0px 0px 13px 3px rgba(214,214,214,1);
-  -moz-box-shadow: 0px 0px 13px 3px rgba(214,214,214,1);
-  box-shadow: 0px 0px 13px 3px rgba(214,214,214,1);
+  -webkit-box-shadow: 0px 0px 13px 3px rgba(214, 214, 214, 1);
+  -moz-box-shadow: 0px 0px 13px 3px rgba(214, 214, 214, 1);
+  box-shadow: 0px 0px 13px 3px rgba(214, 214, 214, 1);
 
   svg {
     transform: rotate(180deg);
@@ -51,7 +52,7 @@ export const Header = styled.div`
   }
 
   span small {
-    color: #006D99;
+    color: #006d99;
   }
 
   span {
@@ -82,13 +83,20 @@ export const Inventory = styled.div`
     margin: 15px;
     height: 50px;
     width: 50px;
-    background: #E3E3E3;
+    background: #e3e3e3;
     border-radius: 4px;
   }
 `;
 
 export const Separator = withStyles({
   root: {
-    margin: '40px 30px 0 30px'
+    margin: '40px 30px 0 30px',
   },
 })(Divider);
+
+export const AvatarImage = withStyles({
+  root: {
+    width: 80,
+    height: 80,
+  },
+})(Avatar);

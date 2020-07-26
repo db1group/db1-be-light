@@ -1,10 +1,11 @@
+import User from '../interfaces/user';
 export const TOKEN_KEY = '@db1BeLight:userData';
 
-interface UserData {
-  name: string;
-  email: string;
-}
+export const getUserData = (): User => {
+  const userStoraged = localStorage.getItem(TOKEN_KEY);
 
-export const getUserData = () => localStorage.getItem(TOKEN_KEY);
-export const setUserData = (userData: UserData) =>
-  localStorage.getItem(TOKEN_KEY);
+  return userStoraged && JSON.parse(userStoraged);
+};
+
+export const setUserData = (userData: User) =>
+  localStorage.setItem(TOKEN_KEY, JSON.stringify(userData));

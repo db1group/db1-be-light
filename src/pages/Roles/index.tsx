@@ -1,46 +1,44 @@
-import React, { ChangeEvent } from 'react';
-import { Typography, InputProps, ValueLabelProps } from '@material-ui/core';
+import React, { useEffect, useState } from 'react';
+
+import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import SearchRounded from '@material-ui/icons/SearchRounded';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { Theme, createStyles, makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
-import {
-  ExpansionPanel,
-  ExpansionPanelSummary,
-  ExpansionPanelDetails,
-} from '@material-ui/core';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 
-import roles from './roles.json';
-import Shell from '../../components/_Shell';
-import ResponsibilityCard from '../../components/ResponsibilityCard';
+import api from '../../services/api';
+import Role from '../../interfaces/role';
 
-import { Box, Content, Lane, Title } from './styles';
+import { Content, Box, AccordionDetails } from './styles';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     accordion: {
       width: '100%',
       marginBottom: 20,
-      borderTopLeftRadius: '15px !important',
-      borderTopRightRadius: '15px !important',
-      borderBottomLeftRadius: '15px !important',
-      borderBottomRightRadius: '15px !important',
-      borderRadius: 15,
+      borderTopLeftRadius: '6px !important',
+      borderTopRightRadius: '6px !important',
+      borderBottomLeftRadius: '6px !important',
+      borderBottomRightRadius: '6px !important',
+      borderRadius: 6,
       position: 'unset',
       marginTop: 20,
     },
     summary: {
       width: '100%',
+      background: '#dbe9f0',
     },
     heading: {
       fontSize: theme.typography.pxToRem(15),
       fontWeight: theme.typography.fontWeightRegular,
+      textTransform: 'uppercase',
+      color: '#006d99',
     },
-    filter: {
+    fullWidth: {
       width: '100%',
     },
   })
@@ -48,15 +46,23 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const Roles: React.FC = () => {
   const classes = useStyles();
-  const [expanded, setExpanded] = React.useState('');
-  const [name, setName] = React.useState('');
-  const [roleList, setRoleList] = React.useState(roles);
+  const [] = React.useState('');
+  const [, setName] = React.useState('');
+  const [roles, setRoles] = useState<Role[]>([]);
+  const [roleList, setRoleList] = useState<Role[]>([]);
+
+  useEffect(() => {
+    api.get<Role[]>('/roles').then((response) => {
+      setRoles(response.data);
+      setRoleList(response.data);
+    });
+  }, []);
 
   const handleFilter = (value: string) => {
     const description = (value || '').toUpperCase();
     setName(value);
     const filteredRoles = roles.filter((role) => {
-      return role.role.toUpperCase().includes(description);
+      return role.description.toUpperCase().includes(description);
     });
 
     setRoleList(filteredRoles);
@@ -66,7 +72,7 @@ const Roles: React.FC = () => {
     <Content>
       <FormControl fullWidth>
         <TextField
-          className={classes.filter}
+          className={classes.fullWidth}
           id="filled-basic"
           label="Filtrar papéis"
           onChange={(event) => {
@@ -90,28 +96,44 @@ const Roles: React.FC = () => {
             aria-controls="panel2d-content"
             id="panel2d-header"
           >
-            <Typography className={classes.heading}>{role.role}</Typography>
+            <Typography className={classes.heading}>
+              {role.description}
+            </Typography>
           </ExpansionPanelSummary>
 
-          <ExpansionPanelDetails>
-            {role.responsibilities.map((resp) => (
-              <Lane key={resp.id}>
-                <Title variant="h6">{resp.groupName}</Title>
-                {resp.descriptions.map((desc: string) => (
-                  <ResponsibilityCard key={Math.random()} description={desc} />
-                ))}
-              </Lane>
-            ))}
+          <AccordionDetails>
+            <Typography variant="h6" className={classes.fullWidth}>
+              Responsabilidades:
+            </Typography>
 
-            {role.notResponsibilities.length && (
-              <Lane>
-                <Title variant="h6">Não Responsabilidades:</Title>
-                {role.notResponsibilities.map((desc) => (
-                  <ResponsibilityCard key={Math.random()} description={desc} />
-                ))}
-              </Lane>
+            {role.responsibilities
+              .filter((responsibility) => responsibility.category)
+              .map((responsibility) => (
+                <Box key={responsibility.id}>
+                  <span>{responsibility.description}</span>
+
+                  <small>{responsibility.category}</small>
+                </Box>
+              ))}
+
+            {role.responsibilities.filter(
+              (responsibility) => !responsibility.category
+            ).length > 0 && (
+              <Typography variant="h6" className={classes.fullWidth}>
+                Não responsabilidades:
+              </Typography>
             )}
-          </ExpansionPanelDetails>
+
+            {role.responsibilities
+              .filter((responsibility) => !responsibility.category)
+              .map((responsibility) => (
+                <Box key={responsibility.id}>
+                  <span>{responsibility.description}</span>
+
+                  <small>{responsibility.category}</small>
+                </Box>
+              ))}
+          </AccordionDetails>
         </ExpansionPanel>
       ))}
     </Content>

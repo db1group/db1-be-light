@@ -14,7 +14,6 @@ const useStyles = makeStyles((_) =>
 
 const Navbar: React.FC = () => {
   const classes = useStyles();
-  const pathname = 'main';
 
   const handleRoute = (route: string) =>
     (window.location.href = `${process.env.PUBLIC_URL}/${route}`);
@@ -22,8 +21,8 @@ const Navbar: React.FC = () => {
   return (
     <Nav>
       <NavbarButton
-        className={!window.location.href.includes('main') ? classes.active : ''}
-        onClick={() => handleRoute('main')}
+        className={!window.location.href.includes('home') ? classes.active : ''}
+        onClick={() => handleRoute('home')}
       >
         Meus dados
       </NavbarButton>

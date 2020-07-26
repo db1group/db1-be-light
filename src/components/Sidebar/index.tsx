@@ -1,40 +1,45 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import ExitToApp from '@material-ui/icons/ExitToApp';
 
-import { Content, Header, Inventory, Separator } from './styles';
-
-interface User {
-  name: string;
-  userName: string;
-}
+import { Content, Header, Inventory, Separator, AvatarImage } from './styles';
+import User from '../../interfaces/user';
+import { getUserData } from '../../services/user-data';
+import { logout } from '../../services/auth';
 
 const Sidebar: React.FC = () => {
-  const [user, setUser] = useState<User | null>(null);
+  const history = useHistory();
+  const [user, setUser] = useState<User>();
+  const [avatarName, setAvatarName] = useState('');
 
   useEffect(() => {
-    const localUser = localStorage.getItem('userData');
-    const storagedUser = localUser ? JSON.parse(localUser) : null;
-    console.log(localStorage.getItem('userData'));
-    setUser(storagedUser);
+    const userData = getUserData();
+    const [firstName, ...rest] = (userData.name || '').split(' ');
+    const lastName = rest.pop() || '';
+
+    setUser(userData);
+    setAvatarName(`${firstName.charAt(0)}${lastName.charAt(0)}`);
   }, []);
+
+  const handleLogout = (): void => {
+    logout();
+    history.push('login');
+  };
 
   return (
     <Content>
-      <ExitToApp titleAccess="Sair" />
+      <ExitToApp titleAccess="Sair" onClick={handleLogout} />
 
       <Header>
-        <img
-          src="https://avatars2.githubusercontent.com/u/8760873?v=4"
-          alt="Profile img"
-        />
-
+        <AvatarImage variant="rounded">{avatarName}</AvatarImage>
         <div>
-          <p>{user?.name}</p>
-          {/* <small>larissa.pissurno@db1.com.br</small> */}
-          <span>
-            <small>Desenvolvedor(a)</small>
-          </span>
+          <p title={user?.email}>{user?.name}</p>
+          {user?.role_id && (
+            <span>
+              <small>Desenvolvedor(a)</small>
+            </span>
+          )}
         </div>
       </Header>
 
@@ -55,9 +60,8 @@ const Sidebar: React.FC = () => {
         <span></span>
         <span></span>
       </Inventory>
-
     </Content>
   );
-}
+};
 
 export default Sidebar;
