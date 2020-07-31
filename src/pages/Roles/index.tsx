@@ -14,6 +14,7 @@ import api from '../../services/api';
 import Role from '../../interfaces/role';
 
 import { Content, Box, AccordionDetails } from './styles';
+import Shell from '../../components/Shell';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -69,74 +70,76 @@ const Roles: React.FC = () => {
   };
 
   return (
-    <Content>
-      <FormControl fullWidth>
-        <TextField
-          className={classes.fullWidth}
-          id="filled-basic"
-          label="Filtrar papéis"
-          onChange={(event) => {
-            handleFilter(event.target.value);
-          }}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment position="end">
-                <SearchRounded />
-              </InputAdornment>
-            ),
-          }}
-        />
-      </FormControl>
+    <Shell>
+      <Content>
+        <FormControl fullWidth>
+          <TextField
+            className={classes.fullWidth}
+            id="filled-basic"
+            label="Filtrar papéis"
+            onChange={(event) => {
+              handleFilter(event.target.value);
+            }}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <SearchRounded />
+                </InputAdornment>
+              ),
+            }}
+          />
+        </FormControl>
 
-      {roleList.map((role) => (
-        <ExpansionPanel className={classes.accordion} key={role.id}>
-          <ExpansionPanelSummary
-            className={classes.summary}
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel2d-content"
-            id="panel2d-header"
-          >
-            <Typography className={classes.heading}>
-              {role.description}
-            </Typography>
-          </ExpansionPanelSummary>
-
-          <AccordionDetails>
-            <Typography variant="h6" className={classes.fullWidth}>
-              Responsabilidades:
-            </Typography>
-
-            {role.responsibilities
-              .filter((responsibility) => responsibility.category)
-              .map((responsibility) => (
-                <Box key={responsibility.id}>
-                  <span>{responsibility.description}</span>
-
-                  <small>{responsibility.category}</small>
-                </Box>
-              ))}
-
-            {role.responsibilities.filter(
-              (responsibility) => !responsibility.category
-            ).length > 0 && (
-              <Typography variant="h6" className={classes.fullWidth}>
-                Não responsabilidades:
+        {roleList.map((role) => (
+          <ExpansionPanel className={classes.accordion} key={role.id}>
+            <ExpansionPanelSummary
+              className={classes.summary}
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel2d-content"
+              id="panel2d-header"
+            >
+              <Typography className={classes.heading}>
+                {role.description}
               </Typography>
-            )}
+            </ExpansionPanelSummary>
 
-            {role.responsibilities
-              .filter((responsibility) => !responsibility.category)
-              .map((responsibility) => (
-                <Box key={responsibility.id}>
-                  <span>{responsibility.description}</span>
+            <AccordionDetails>
+              <Typography variant="h6" className={classes.fullWidth}>
+                Responsabilidades:
+              </Typography>
 
-                  <small>{responsibility.category}</small>
-                </Box>
-              ))}
-          </AccordionDetails>
-        </ExpansionPanel>
-      ))}
-    </Content>
+              {role.responsibilities
+                .filter((responsibility) => responsibility.category)
+                .map((responsibility) => (
+                  <Box key={responsibility.id}>
+                    <span>{responsibility.description}</span>
+
+                    <small>{responsibility.category}</small>
+                  </Box>
+                ))}
+
+              {role.responsibilities.filter(
+                (responsibility) => !responsibility.category
+              ).length > 0 && (
+                <Typography variant="h6" className={classes.fullWidth}>
+                  Não responsabilidades:
+                </Typography>
+              )}
+
+              {role.responsibilities
+                .filter((responsibility) => !responsibility.category)
+                .map((responsibility) => (
+                  <Box key={responsibility.id}>
+                    <span>{responsibility.description}</span>
+
+                    <small>{responsibility.category}</small>
+                  </Box>
+                ))}
+            </AccordionDetails>
+          </ExpansionPanel>
+        ))}
+      </Content>
+    </Shell>
   );
 };
 

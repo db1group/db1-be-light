@@ -11,6 +11,7 @@ import Responsibility from '../../interfaces/responsibility';
 
 import { Content, Box } from './styles';
 import { responsiveFontSizes } from '@material-ui/core';
+import Shell from '../../components/Shell';
 
 const MyData: React.FC = () => {
   const [openRoleDialog, setOpenRoleDialog] = useState(false);
@@ -42,11 +43,12 @@ const MyData: React.FC = () => {
     const userData = getUserData();
     const response = await api.get<Role>(`/users/role/${userData.id}`);
 
+    setUser(userData);
     setUserRole(response.data);
   };
 
   return (
-    <>
+    <Shell>
       {user?.role_id && (
         <Content>
           <p>Papel: {userRole?.description}</p>
@@ -97,7 +99,7 @@ const MyData: React.FC = () => {
         setIsOpen={setOpenRoleDialog}
         handleAfterSave={getUserRole}
       />
-    </>
+    </Shell>
   );
 };
 

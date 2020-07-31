@@ -35,7 +35,7 @@ const Login: React.FC = () => {
       login(session.token);
       setUserData(user);
 
-      history.push(`${process.env.PUBLIC_URL}/home`);
+      history.push(`home`);
     }
   };
 

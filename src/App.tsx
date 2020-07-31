@@ -22,9 +22,9 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Shell>
+        {/* <Shell> */}
           <Routes />
-        </Shell>
+        {/* </Shell> */}
       </BrowserRouter>
       <GlobalStyle />
     </ThemeProvider>

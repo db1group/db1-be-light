@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import Sidebar from '../Sidebar';
 import Navbar from '../Navbar';
@@ -8,6 +8,7 @@ import { Content } from './styles';
 
 const Shell: React.FC = ({ children }) => {
   const history = useHistory();
+  const location = useLocation();
   const [isLogin, setIsLogin] = useState(false);
 
   useEffect(() => {
@@ -19,7 +20,7 @@ const Shell: React.FC = ({ children }) => {
     const isLogin = loginPaths.includes(history.location.pathname);
 
     setIsLogin(isLogin);
-  }, [history]);
+  }, [history, location]);
 
   return (
     <>
